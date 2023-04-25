@@ -35,18 +35,18 @@
 | id            | integer   | not null, primary key |
 | name          | string    | not null              |
 | completed     | boolean   | not null              |
-| dueDate       | datetime  | not null,             |
-| startDate     | datetime  | not null,             |
-| priority      | integer   | not null,             |
-| repeatPeriod  | integer   | not null,             |
-| repeatType    | string    | not null,             |
-| location      | string    | not null,             |
-| estimate      | integer   | not null, default: 0  |
-| tags          | string    | not null,             |
-| notes         | string    | not null,             |
-| listId        | integer   | not null, foreign key |
+| dueDate       | datetime  |                       |
+| startDate     | datetime  |                       |
+| priority      | integer   |                       |
+| repeatPeriod  | integer   |                       |
+| repeatType    | string    |                       |
+| location      | string    |                       |
+| estimate      | integer   |           default: 0  |
+| tags          | string    |                       |
+| notes         | string    |                       |
+| listId        | integer   | foreign key           |
 | ownerId       | integer   | not null, foreign key |
-| assignedUser  | integer   | not null, foreign key |
+| assignedUser  | integer   | foreign key           |
 | created_at    | datetime  | not null              |
 | updated-at    | datetime  | not null              |
 
@@ -61,15 +61,15 @@
 | id            | integer   | not null, primary key |
 | name          | string    | not null              |
 | completed     | boolean   | not null              |
-| dueDate       | datetime  | not null,             |
-| startDate     | datetime  | not null,             |
-| priority      | integer   | not null,             |
-| repeatPeriod  | integer   | not null,             |
-| repeatType    | string    | not null,             |
-| location      | string    | not null,             |
-| estimate      | integer   | not null, default: 0  |
-| tags          | string    | not null,             |
-| notes         | string    | not null,             |
+| dueDate       | datetime  |                       |
+| startDate     | datetime  |                       |
+| priority      | integer   |                       |
+| repeatPeriod  | integer   |                       |
+| repeatType    | string    |                       |
+| location      | string    |                       |
+| estimate      | integer   |           default: 0  |
+| tags          | string    |                       |
+| notes         | string    |                       |
 | parentTask    | integer   | not null, foreign key |
 | created_at    | datetime  | not null              |
 | updated-at    | datetime  | not null              |
