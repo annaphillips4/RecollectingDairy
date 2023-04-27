@@ -22,7 +22,7 @@ Recollecting Dairy, a Remember the Milk Clone, is a website for making fancy int
 
 * Logged in users can create new lists
 * Logged in users can add and remove tasks from their lists
-* All users can delete their lists
+* Logged in users can delete their lists
 
 ## 4. List summary (time, num tasks, num completed)
 
