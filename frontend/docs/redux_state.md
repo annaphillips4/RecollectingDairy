@@ -28,7 +28,7 @@
          name: "Chores",
          numTasks: 4,
          numCompleted: 0,
-         notes: "Double check milk expiration date"
+         notes: "Double check milk expiration date",
          taskIds: [1],
          editPrivIds: [2],
          viewPrivIds: []
@@ -39,7 +39,7 @@
          name: "Dog Training",
          numTasks: 5,
          numCompleted: 2,
-         notes: "Remember that your friend asked you to care for this dog on his deathbed, so if this doesn't work at least try to find a no kill shelter."
+         notes: "Remember that your friend asked you to care for this dog on his deathbed, so if this doesn't work at least try to find a no kill shelter.",
          taskIds: [2],
          editPrivIds: [],
          viewPrivIds: [2]
