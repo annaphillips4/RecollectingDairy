@@ -8,13 +8,14 @@ class List(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(31), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
     num_tasks = db.Column(db.Integer)
     num_completed = db.Column(db.Integer)
     notes = db.Column(db.String(255))
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
     owner = db.relationship("User", back_populates="user")
+    list = db.relationship('Task', back_populates='list')
 
     def to_dict(self):
         return {

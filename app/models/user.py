@@ -17,7 +17,8 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     owner = db.relationship("List", back_populates="user")
-
+    owner = db.relationship('Task', back_populates='user')
+    user = db.relationship('Task', back_populates='user')
 
 
     @property
