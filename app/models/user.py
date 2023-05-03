@@ -10,9 +10,16 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(31), nullable=False)
+    last_name = db.Column(db.String(31), nullable=False)
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+
+    owner = db.relationship("List", back_populates="user")
+    owner = db.relationship('Task', back_populates='user')
+    user = db.relationship('Task', back_populates='user')
+
 
     @property
     def password(self):
@@ -29,5 +36,7 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'firstName': self.first_name,
+            'lastName': self.last_name
         }
