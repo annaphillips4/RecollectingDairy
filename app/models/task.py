@@ -1,5 +1,6 @@
 from .db import db, environment, SCHEMA
 from flask_login import UserMixin
+from .list import List
 
 class Task(db.Model, UserMixin):
   __tablename__ = 'tasks'
@@ -21,11 +22,11 @@ class Task(db.Model, UserMixin):
   notes = db.Column(db.Text)
   listId = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'), nullable=False)
   ownerId = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
-  assigned_user = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+  # assigned_user = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
 
-  list = db.relationship('List', back_populates='list')
-  owner = db.relationship('User', back_populates='user')
-  user = db.relationship('User', back_populates='user')
+  list = db.relationship('List', back_populates='task')
+  owner = db.relationship('User', back_populates='task')
+  # user = db.relationship('User', back_populates='user')
 
   def to_dict(self):
     return {
@@ -43,5 +44,5 @@ class Task(db.Model, UserMixin):
       'notes': self.notes,
       'listId': self.listId,
       'ownerId': self.ownerId,
-      'assigned_user': self.assigned_user
+      # 'assigned_user': self.assigned_user
     }
