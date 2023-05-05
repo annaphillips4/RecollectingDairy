@@ -12,6 +12,7 @@ def seed_lists():
     db.session.add(groceries)
     db.session.add(chores)
     db.session.add(workpro)
+    db.session.commit()
 
 def undo_lists():
     if environment == "production":
