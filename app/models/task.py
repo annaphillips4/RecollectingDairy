@@ -1,6 +1,5 @@
 from .db import db, environment, SCHEMA
 from flask_login import UserMixin
-from .list import List
 
 class Task(db.Model, UserMixin):
   __tablename__ = 'tasks'
