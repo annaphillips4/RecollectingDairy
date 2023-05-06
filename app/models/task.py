@@ -10,8 +10,8 @@ class Task(db.Model, UserMixin):
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(255), nullable=False)
   completed = db.Column(db.Boolean)
-  dueDate = db.Column(db.Date)
-  startDate = db.Column(db.Date)
+  due_date = db.Column(db.Date)
+  start_date = db.Column(db.Date)
   priority = db.Column(db.Integer)
   repeat_period = db.Column(db.Integer)
   repeat_type = db.Column(db.String(255))
@@ -19,29 +19,29 @@ class Task(db.Model, UserMixin):
   estimate = db.Column(db.Integer, default=0)
   tags = db.Column(db.String(255))
   notes = db.Column(db.Text)
-  listId = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'), nullable=False)
-  ownerId = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
-  # assigned_user = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+  list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'), nullable=False)
+  owner_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
+  assigned_user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=True)
 
-  list = db.relationship('List', back_populates='task')
-  owner = db.relationship('User', back_populates='task')
-  # user = db.relationship('User', back_populates='user')
+  list = db.relationship('List', back_populates='tasks')
+  owner = db.relationship('User', back_populates='owned_tasks', foreign_keys='Task.owner_id', lazy='joined')
+  assigned_user = db.relationship('User', back_populates='assigned_tasks', foreign_keys='Task.assigned_user_id', lazy='joined')
 
   def to_dict(self):
     return {
       'id': self.id,
       'name': self.name,
       'completed': self.completed,
-      'dueDate': self.dueDate,
+      'dueDate': self.due_date,
       'startDate': self.startDate,
       'priority': self.priority,
-      'repeat_period': self.repeat_period,
-      'repeat_type': self.repeat_type,
+      'repeatPeriod': self.repeat_period,
+      'repeatType': self.repeat_type,
       'location': self.location,
       'estimate': self.estimate,
       'tags': self.tags,
       'notes': self.notes,
-      'listId': self.listId,
-      'ownerId': self.ownerId,
-      # 'assigned_user': self.assigned_user
+      'listId': self.list_id,
+      'ownerId': self.owner_id,
+      'assignedUserId': self.assigned_user_id
     }
