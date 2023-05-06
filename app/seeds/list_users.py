@@ -16,8 +16,8 @@ def seed_list_users():
 
 def undo_list_users():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.user_lists RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.list_users RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute(text("DELETE FROM lists"))
+        db.session.execute(text("DELETE FROM list_users"))
 
     db.session.commit()
