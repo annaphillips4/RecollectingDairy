@@ -19,7 +19,9 @@ class User(db.Model, UserMixin):
     lists = db.relationship("List", back_populates="owner")
     list_users = db.relationship('List_User', back_populates='user')
     owned_tasks = db.relationship('Task', back_populates='owner')
-    assigned_tasks = db.relationship('Task', back_populates='assigned_user')
+    assigned_tasks = db.relationship(
+        'Task', back_populates='assigned_user'
+        )
 
 
 
