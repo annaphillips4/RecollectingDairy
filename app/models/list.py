@@ -14,8 +14,9 @@ class List(db.Model, UserMixin):
     notes = db.Column(db.String(255))
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
-    owner = db.relationship("User", back_populates="user")
-    list = db.relationship('Task', back_populates='list')
+    owner = db.relationship('User', back_populates='list')
+    list_users = db.relationship('List_User', back_populates='list')
+    task = db.relationship('Task', back_populates='list')
 
     def to_dict(self):
         return {
