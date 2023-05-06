@@ -24,8 +24,14 @@ class Task(db.Model, UserMixin):
   assigned_user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=True)
 
   list = db.relationship('List', back_populates='tasks')
-  owner = db.relationship('User', back_populates='owned_tasks', foreign_keys=[owner_id], lazy='joined')
-  assigned_user = db.relationship('User', back_populates='assigned_tasks', foreign_keys=[assigned_user_id], lazy='joined')
+  owner = db.relationship(
+    'User', back_populates='owned_tasks',
+    foreign_keys=[owner_id], lazy='joined'
+    )
+  assigned_user = db.relationship(
+    'User', back_populates='assigned_tasks',
+    foreign_keys=[assigned_user_id], lazy='joined'
+    )
 
   def to_dict(self):
     return {
