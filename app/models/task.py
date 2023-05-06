@@ -39,7 +39,7 @@ class Task(db.Model, UserMixin):
       'name': self.name,
       'completed': self.completed,
       'dueDate': self.due_date,
-      'startDate': self.startDate,
+      'startDate': self.start_date,
       'priority': self.priority,
       'repeatPeriod': self.repeat_period,
       'repeatType': self.repeat_type,
