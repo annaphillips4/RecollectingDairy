@@ -17,6 +17,7 @@ class List_User(db.Model, UserMixin):
 
   def to_dict(self):
     return {
+      'id': self.id,
       'userId': self.user_id,
       'listId': self.list_id,
       'edit_priv': self.edit_priv
