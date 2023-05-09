@@ -7,6 +7,7 @@ class List_User(db.Model, UserMixin):
   if environment == "production":
     __table_args__ = {'schema': SCHEMA}
 
+  id = db.Column(db.Integer, primary_key=True)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete="CASCADE"), nullable=False)
   list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete="CASCADE"), nullable=False)
   edit_priv = db.Column(db.Boolean, default=False, nullable=False)
@@ -16,6 +17,7 @@ class List_User(db.Model, UserMixin):
 
   def to_dict(self):
     return {
+      'id': self.id,
       'userId': self.user_id,
       'listId': self.list_id,
       'edit_priv': self.edit_priv
