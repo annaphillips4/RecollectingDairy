@@ -16,4 +16,4 @@ class ListForm(FlaskForm):
     name = StringField('name', validators=[DataRequired(), list_exists])
     # num_tasks = IntegerField('num_tasks')
     # num_completed = IntegerField('num_completed')
-    # notes = StringField('notes')
+    notes = StringField('notes')
