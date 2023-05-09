@@ -4,13 +4,13 @@ from app.models import Task
 
 task_routes = Blueprint('tasks', __name__)
 
-@task_routes.route('/', methods=['GET'])
+@task_routes.route('/')
 @login_required
 def all_tasks():
     tasks = Task.query.all()
     return {task.id: task.to_dict() for task in Task.query.all()}
 
-@task_routes.route('/<int:id>', methods=['GET'])
+@task_routes.route('/<int:id>')
 @login_required
 def task_by_id(id):
     task = Task.query.get(id)
@@ -37,7 +37,7 @@ def post_new_task():
         db.session.add(new_task)
         db.session.commit()
         return
-    return "Bad Data"
+    return jsonify({'error': f'Unable to create new task.'})
 
 @task_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
