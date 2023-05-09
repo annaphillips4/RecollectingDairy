@@ -6,13 +6,14 @@ export default function Tasks() {
     const dispatch = useDispatch()
     const tasks = useSelector(state => state.tasks)
     const tasksArr = Object.values(tasks)
+    console.log(tasks)
 
     useEffect(() => {
         dispatch(loadTasks())
     }, [dispatch])
     return (
-        <div>Tasks Here!!!</div>
+        <>
+            {tasksArr.map(obj => <div>{obj.task}</div>)}
+        </>
     )
 }
-
-// Pick up 38:00
