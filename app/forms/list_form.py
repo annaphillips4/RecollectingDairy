@@ -14,6 +14,6 @@ def list_exists(form, field):
 
 class ListForm(FlaskForm):
     name = StringField('name', validators=[DataRequired(), list_exists])
-    num_tasks = IntegerField('num_tasks')
-    num_completed = IntegerField('num_completed')
+    # num_tasks = IntegerField('num_tasks')
+    # num_completed = IntegerField('num_completed')
     notes = StringField('notes')
