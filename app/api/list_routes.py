@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from app.models import List, db
 from app.forms import ListForm
 from .auth_routes import validation_errors_to_error_messages
