@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, render_template
 from flask_login import login_required
-from app.models import Task
+from app.models import Task, db
+from .forms import NewTask
 
 task_routes = Blueprint('tasks', __name__)
 

@@ -82,7 +82,7 @@ export default function Tasks() {
           <i class="fa-solid fa-rectangle-list"></i>
           <i class="fa-solid fa-clock-rotate-left"></i>
           <i class="fa-solid fa-location-dot"></i>
-          <i class="fa-solid fa-clock"></i>
+          <i class="fa-solid fa-stopwatch"></i>
           <i class="fa-solid fa-user"></i>
         </div>
       </form>
