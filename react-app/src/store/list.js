@@ -12,7 +12,11 @@ const addList = (list) => ({
 });
 
 export const loadLists = () => async (dispatch) => {
-  const res = await fetch("/api/lists")
+  const res = await fetch("/api/lists", {
+    headers: {
+      "Content-Type": "application/json",
+    }
+  });
 
   if (res.ok) {
     const data = await res.json()
@@ -22,8 +26,11 @@ export const loadLists = () => async (dispatch) => {
 };
 
 export const newList = (list) => async (dispatch) => {
-  const res = await fetch("/api/lists", {
+  const res = await fetch("/api/lists/", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(list)
   });
 

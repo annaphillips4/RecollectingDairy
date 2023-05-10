@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listActions from "../../store/list";
 
 const NewListForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const currentUser = useSelector(state => state.session.user)
 
   const [name, setName] = useState("");
   const [notes, setNotes] = useState("");
@@ -14,7 +16,7 @@ const NewListForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const list = { name, notes }
+    const list = { name, notes, owner_id: currentUser.id }
 
     return dispatch(listActions.newList(list))
       .then((res) => history.push("/lists"))
