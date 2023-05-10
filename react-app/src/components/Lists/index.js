@@ -8,7 +8,6 @@ export default function Lists() {
   const lists = useSelector(state => state.lists)
 
   const listArr = Object.values(lists)
-  console.log(lists)
 
   useEffect(() => {
     dispatch(loadLists())
