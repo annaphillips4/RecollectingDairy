@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from flask_login import current_user, login_required
 from app.models import List, db
 from app.forms import ListForm
 from .auth_routes import validation_errors_to_error_messages
@@ -10,6 +11,7 @@ def lists():
   return {list.id: list.to_dict() for list in List.query.all()}
 
 @list_routes.route('/', methods=['POST'])
+@login_required
 def add_list():
     """
     Adds a new list
@@ -20,7 +22,8 @@ def add_list():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         list = List(
-            name=form.data['name']
+            name=form.data['name'],
+            owner_id=current_user.id
         )
         db.session.add(list)
         db.session.commit()
