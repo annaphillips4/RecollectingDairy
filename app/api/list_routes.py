@@ -20,7 +20,8 @@ def add_list():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         list = List(
-            name=form.data['name']
+            name=form.data['name'],
+            notes=form.data['notes']
         )
         db.session.add(list)
         db.session.commit()
