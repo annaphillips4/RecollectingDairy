@@ -54,7 +54,7 @@ export const deleteTask = (taskId) => async dispatch => {
 }
 
 const initialState = {}
-const tasks = (state = initialState, action) => {
+const tasksReducer = (state = initialState, action) => {
     switch(action.type){
         case LOAD_TASKS:
             return {...state, ...action.tasks}
@@ -68,4 +68,4 @@ const tasks = (state = initialState, action) => {
     }
 }
 
-export default tasks
+export default tasksReducer

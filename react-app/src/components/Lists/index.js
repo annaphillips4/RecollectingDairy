@@ -15,7 +15,7 @@ export default function Lists() {
 
   return (
     <>
-      {listArr.map(list => <div>{list.name}</div>)}
+      {listArr.map(list => <div>Name: {list.name}, Notes: {list.notes}</div>)}
     </>
   )
 }

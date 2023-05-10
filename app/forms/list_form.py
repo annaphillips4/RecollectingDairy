@@ -7,6 +7,11 @@ from app.models import List
 # this should be updated to check whether the current user
 # has a list with the same name, rather than checking all
 # list names in the db
+def list_exists_2(form, field, id):
+    list = List.query.get(id)
+    if list:
+        raise ValidationError("You already have a list with this name. Please choose another name.")
+
 def list_exists(form, field):
     name = field.data
     # list = List.query.filter(List.name == name).first()
