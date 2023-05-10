@@ -23,6 +23,11 @@ export default function Tasks() {
     const matches = input.matchAll(tagPattern);
     const formValues = {};
 
+    const nameMatch = /^([^!@^~#*=+]+)/.exec(input);
+    if (nameMatch) {
+      formValues.name = nameMatch[1].trim();
+    }
+
     for (const match of matches) {
       const tag = match[1];
       const value = match[2].trim();
@@ -53,7 +58,6 @@ export default function Tasks() {
           formValues.startDate = value;
           break;
         default:
-          formValues.name = value;
           break;
       }
     }
@@ -64,17 +68,27 @@ export default function Tasks() {
   return (
     <>
       <h1>Tasks</h1>
-      {tasksArr.map((taskObj) => (
-        <div>{taskObj.name}</div>
-      ))}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Add Task</button>
+        <div>
+          <i class="fa-solid fa-calendar-check"></i>
+          <i class="fa-solid fa-calendar-day"></i>
+          <i class="fa-solid fa-exclamation"></i>
+          <i class="fa-solid fa-rectangle-list"></i>
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <i class="fa-solid fa-location-dot"></i>
+          <i class="fa-solid fa-clock"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
       </form>
+      {tasksArr.map((taskObj) => (
+        <div>{taskObj.name}</div>
+      ))}
     </>
   );
 }
