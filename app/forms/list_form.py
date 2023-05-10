@@ -1,3 +1,4 @@
+from flask_login import current_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, ValidationError
@@ -8,7 +9,8 @@ from app.models import List
 # list names in the db
 def list_exists(form, field):
     name = field.data
-    list = List.query.filter(List.name == name).first()
+    # list = List.query.filter(List.name == name).first()
+    list = List.query.filter(List.name == name, List.owner_id == current_user.id).first()
     if list:
         raise ValidationError("You already have a list with this name. Please choose another name.")
 
