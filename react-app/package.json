@@ -17,7 +17,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "NODE_OPTIONS= react-scripts start",
+    "start": "react-scripts start",
+    "macStart": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
