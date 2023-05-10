@@ -24,9 +24,6 @@ export const loadLists = () => async (dispatch) => {
 export const newList = (list) => async (dispatch) => {
   const res = await fetch("/api/lists", {
     method: "POST",
-    headers: {
-			"Content-Type": "application/json",
-		},
     body: JSON.stringify(list)
   });
 

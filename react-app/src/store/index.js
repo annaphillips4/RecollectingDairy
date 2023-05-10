@@ -5,7 +5,7 @@ import listsReducer from './list';
 
 const rootReducer = combineReducers({
   session,
-  listsReducer
+  lists: listsReducer
 });
 
 

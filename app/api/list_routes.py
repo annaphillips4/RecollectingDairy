@@ -5,11 +5,11 @@ from .auth_routes import validation_errors_to_error_messages
 
 list_routes = Blueprint('lists', __name__)
 
-@list_routes.route('/', methods=['GET'])
+@list_routes.route('', methods=['GET'])
 def lists():
   return {list.id: list.to_dict() for list in List.query.all()}
 
-@list_routes.route('/', methods=['POST'])
+@list_routes.route('', methods=['POST'])
 def add_list():
     """
     Adds a new list
