@@ -1,8 +1,8 @@
-"""empty message
+"""initial migration
 
-Revision ID: fc07d81cacbc
+Revision ID: 22f5447ef648
 Revises: 
-Create Date: 2023-05-06 17:35:43.253755
+Create Date: 2023-05-09 21:06:49.146344
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'fc07d81cacbc'
+revision = '22f5447ef648'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,8 +32,6 @@ def upgrade():
     op.create_table('lists',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=255), nullable=False),
-    sa.Column('num_tasks', sa.Integer(), nullable=True),
-    sa.Column('num_completed', sa.Integer(), nullable=True),
     sa.Column('notes', sa.String(length=255), nullable=True),
     sa.Column('owner_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ondelete='CASCADE'),
