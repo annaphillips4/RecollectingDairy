@@ -12,11 +12,12 @@ const addList = (list) => ({
 });
 
 export const loadLists = () => async (dispatch) => {
-  let res = await fetch("/api/lists")
+  const res = await fetch("/api/lists")
 
   if (res.ok) {
-    res = await res.json()
-    dispatch(getLists(res))
+    const data = await res.json()
+    dispatch(getLists(data))
+    return data;
   }
 };
 
@@ -27,26 +28,26 @@ export const newList = (list) => async (dispatch) => {
   });
 
   if (res.ok) {
-    const data = res.json();
-
+    const data = await res.json();
     dispatch(addList(data));
+    return data;
   }
 };
 
 const initialState = {}
 
-const lists = (state = initialState, action) => {
+const listsReducer = (state = initialState, action) => {
   let newState = {};
 
   switch (action.type) {
     case LOAD_LISTS:
       return { ...state, ...action.lists }
     case ADD_LIST:
-      newState = {...state, ...action.list}
+      newState = { ...state, [action.id]: action.list }
       return newState;
     default:
       return state
   }
 };
 
-export default lists
+export default listsReducer
