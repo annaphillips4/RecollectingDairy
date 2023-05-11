@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadTasks, postTask } from "../../store/task";
+import { loadTasks, postTask, deleteTask } from "../../store/task";
 
 export default function Tasks() {
   const dispatch = useDispatch();
