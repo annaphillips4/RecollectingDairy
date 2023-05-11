@@ -18,6 +18,7 @@ const removeTask = task => ({
 })
 
 export const loadTasks = () => async dispatch => {
+    console.log("in loadTasks")
     let res = await fetch('/api/tasks')
     if (res.ok){
         res = await res.json()
@@ -26,12 +27,13 @@ export const loadTasks = () => async dispatch => {
 }
 
 export const postTask = (payload) => async dispatch => {
+    console.log("in postTasks")
     const res = await fetch('/api/new_task', {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(payload),
     });
-
+    console.log(res)
     if (res.ok) {
         const task = await res.json();
         dispatch(addTask(task));
@@ -54,7 +56,7 @@ export const deleteTask = (taskId) => async dispatch => {
 }
 
 const initialState = {}
-const tasks = (state = initialState, action) => {
+const tasksReducer = (state = initialState, action) => {
     switch(action.type){
         case LOAD_TASKS:
             return {...state, ...action.tasks}
@@ -68,4 +70,4 @@ const tasks = (state = initialState, action) => {
     }
 }
 
-export default tasks
+export default tasksReducer

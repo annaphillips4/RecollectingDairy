@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, render_template
 from flask_login import login_required
 from app.models import Task, db
-from .forms import NewTask
+from ..forms.task_form import NewTask
 
 task_routes = Blueprint('tasks', __name__)
 
@@ -20,6 +20,7 @@ def task_by_id(id):
 @task_routes.route('/new_task', methods=['POST'])
 # @login_required
 def post_new_task():
+    console.log("inside POST route")
     form = NewTask()
     if form.validate_on_submit():
         new_task = NewTask(
