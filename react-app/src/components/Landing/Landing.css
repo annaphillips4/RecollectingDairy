@@ -1,0 +1,98 @@
+body {
+  line-height: 1.42857143;
+  background-color: #0060bf;
+  font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+  position: relative;
+  top: 150px;
+}
+
+.main-header {
+  text-align: center;
+}
+
+.header-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+}
+
+.header-container>h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  margin: 20px 0 40px 0;
+  line-height: 1.1;
+  padding-bottom: 10px;
+}
+
+.signup-button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #d24b03;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 11px 28px 12px;
+  border-radius: 5px;
+  line-height: 1.2;
+}
+
+.signup-button:hover {
+  opacity: 0.8;
+}
+
+.main-content {
+  text-align: center;
+}
+
+.clouds {
+  font-family: cursive;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 100px;
+}
+
+.clouds>span:first-child {
+  margin: 5px 150px 0 0;
+}
+
+.clouds>span {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683835718/dairy/hp_cloud_mvdpmh.png);
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+  padding: 75px 36px 0px 20px;
+  line-height: 1.3;
+  color: rgba(51, 51, 51, 0.9);
+  width: 166px;
+  height: 166px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.steve {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683835701/dairy/hp_steve_1_xbdofm.png);
+  background-repeat: no-repeat;
+  background-size: 300px auto;
+  width: 400px;
+  height: 360px;
+  display: inline-block;
+  margin-left: 90px;
+  position: relative;
+  top: -70px;
+}
+
+.main-content>h2 {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.main-content>p {
+  font-size: 19px;
+  color: #fff;
+  max-width: 330px;
+  margin: auto;
+  line-height: 25px;
+}
