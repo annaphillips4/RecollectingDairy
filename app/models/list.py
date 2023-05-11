@@ -9,8 +9,8 @@ class List(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
-    num_tasks = db.Column(db.Integer)
-    num_completed = db.Column(db.Integer)
+    # num_tasks = db.Column(db.Integer)
+    # num_completed = db.Column(db.Integer)
     notes = db.Column(db.String(255))
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
@@ -22,8 +22,8 @@ class List(db.Model, UserMixin):
         return {
             'id': self.id,
             'name': self.name,
-            'numTasks': self.num_tasks,
-            'numCompleted': self.num_completed,
+            # 'numTasks': self.num_tasks,
+            # 'numCompleted': self.num_completed,
             'notes': self.notes,
             'ownerId': self.owner_id
         }
