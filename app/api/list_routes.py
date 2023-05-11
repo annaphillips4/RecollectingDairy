@@ -21,9 +21,10 @@ def add_list():
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
-    name = request.json.name
+
+    name = request.json['name']
     list_exists = List.query.filter(List.name == name, List.owner_id == current_user.id).first()
-    if not list_exists:
+    if list_exists:
        return jsonify({'error': "You already have a list with this name. Please choose another name."}), 400
     elif form.validate_on_submit():
         # list = List(
