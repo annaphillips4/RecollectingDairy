@@ -1,0 +1,9 @@
+body {
+  line-height: 1.42857143;
+  background-color: #0060bf;
+}
+
+.main-container {
+  position: relative;
+  top: 150px;
+}
