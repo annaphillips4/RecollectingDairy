@@ -50,7 +50,7 @@ const listsReducer = (state = initialState, action) => {
     case LOAD_LISTS:
       return { ...state, ...action.lists }
     case ADD_LIST:
-      newState = { ...state, [action.id]: action.list }
+      newState = { ...state, [action.list.id]: action.list }
       return newState;
     default:
       return state
