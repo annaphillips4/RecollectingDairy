@@ -23,6 +23,10 @@ export default function Tasks() {
     }
   }
 
+  const handleDelete = (taskId) => {
+    dispatch(deleteTask(taskId));
+  }
+
   function parseInputString(input) {
     const tagPattern = /([!@^~#*=+])([^!@^~#*=+]+)/g;
     const matches = input.matchAll(tagPattern);
@@ -92,7 +96,10 @@ export default function Tasks() {
         </div>
       </form>
       {tasksArr.map((taskObj) => (
-        <div>{taskObj.name}</div>
+        <div>
+          {taskObj.name}
+          <a onClick={() => handleDelete(taskObj.id)}><i class="fa-solid fa-trash-can"></i></a>
+        </div>
       ))}
     </>
   );

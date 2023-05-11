@@ -21,26 +21,27 @@ def task_by_id(id):
 # @login_required
 def post_new_task():
     console.log("inside POST route")
+    payload = request.json
     form = NewTask()
     if form.validate_on_submit():
         new_task = NewTask(
-            name=form.data['name'],
-            completed=form.data['completed'],
-            dueDate=form.data['dueDate'],
-            startDate=form.data['startDate'],
-            priority=form.data['priority'],
-            repeat_period=form.data['repeat_period'],
-            repeat_type=form.data['repeat_type'],
-            location=form.data['location'],
-            estimate=form.data['estimate'],
-            tags=form.data['tags'],
-            notes=form.data['notes'],
-            submit=form.data['submit']
+            name=payload['name'],
+            completed=payload['completed'],
+            dueDate=payload['dueDate'],
+            startDate=payload['startDate'],
+            priority=payload['priority'],
+            repeat_period=payload['repeat_period'],
+            repeat_type=payload['repeat_type'],
+            location=payload['location'],
+            estimate=payload['estimate'],
+            tags=payload['tags'],
+            notes=payload['notes'],
+            submit=payload['submit']
         )
         db.session.add(new_task)
         db.session.commit()
-        return
-    return jsonify({'error': f'Unable to create new task.'})
+        return jsonify({'message': 'New task created successfully'})
+    return jsonify({'error': '400 Bad Request'})
 
 @task_routes.route('/<int:id>', methods=['DELETE'])
 # @login_required
