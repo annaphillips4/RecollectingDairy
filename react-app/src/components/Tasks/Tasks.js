@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadTasks } from "../../store/task";
+import { loadTasks, postTask, deleteTask } from "../../store/task";
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -12,20 +12,29 @@ export default function Tasks() {
     dispatch(loadTasks());
   }, [dispatch]);
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formValues = parseInputString(inputValue);
-    console.log(formValues); // TODO: Submit the form values
+    const payload = parseInputString(inputValue);
+    console.log(payload); // TODO: Submit the form values
+    let newReview = await dispatch(postTask(payload))
+    console.log(newReview)
+    if (newReview) {
+      await dispatch(loadTasks)
+    }
+  }
+
+  const handleDelete = (taskId) => {
+    dispatch(deleteTask(taskId));
   }
 
   function parseInputString(input) {
     const tagPattern = /([!@^~#*=+])([^!@^~#*=+]+)/g;
     const matches = input.matchAll(tagPattern);
-    const formValues = {};
+    const payload = {};
 
     const nameMatch = /^([^!@^~#*=+]+)/.exec(input);
     if (nameMatch) {
-      formValues.name = nameMatch[1].trim();
+      payload.name = nameMatch[1].trim();
     }
 
     for (const match of matches) {
@@ -34,35 +43,35 @@ export default function Tasks() {
 
       switch (tag) {
         case "!":
-          formValues.priority = value;
+          payload.priority = value;
           break;
         case "@":
-          formValues.location = value;
+          payload.location = value;
           break;
         case "#":
-          formValues.list = value;
+          payload.list = value;
           break;
         case "*":
-          formValues.repeat = value;
+          payload.repeat = value;
           break;
         case "=":
-          formValues.estimate = value;
+          payload.estimate = parseInt(value);
           break;
         case "+":
-          formValues.assignedUser = value;
+          payload.assignedUser = value;
           break;
         case "^":
-          formValues.dueDate = value;
+          payload.dueDate = value;
           break;
         case "~":
-          formValues.startDate = value;
+          payload.startDate = value;
           break;
         default:
           break;
       }
     }
 
-    return formValues;
+    return payload;
   }
 
   return (
@@ -82,12 +91,15 @@ export default function Tasks() {
           <i class="fa-solid fa-rectangle-list"></i>
           <i class="fa-solid fa-clock-rotate-left"></i>
           <i class="fa-solid fa-location-dot"></i>
-          <i class="fa-solid fa-clock"></i>
+          <i class="fa-solid fa-stopwatch"></i>
           <i class="fa-solid fa-user"></i>
         </div>
       </form>
       {tasksArr.map((taskObj) => (
-        <div>{taskObj.name}</div>
+        <div>
+          {taskObj.name}
+          <a onClick={() => handleDelete(taskObj.id)}><i class="fa-solid fa-trash-can"></i></a>
+        </div>
       ))}
     </>
   );
