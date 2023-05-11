@@ -7,6 +7,7 @@ from app.models import List
 # this should be updated to check whether the current user
 # has a list with the same name, rather than checking all
 # list names in the db
+
 # def list_exists(form, field):
 #     name = field.data
 #     list = List.query.filter(List.name == name, List.owner_id == current_user.id).first()
