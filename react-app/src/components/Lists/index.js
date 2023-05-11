@@ -8,7 +8,6 @@ export default function Lists() {
   const lists = useSelector(state => state.lists)
 
   const listArr = Object.values(lists)
-  console.log(lists)
 
   useEffect(() => {
     dispatch(loadLists())
@@ -16,7 +15,7 @@ export default function Lists() {
 
   return (
     <>
-      {listArr.map(list => <div>{list.name}</div>)}
+      {listArr.map(list => <div>Name: {list.name}, Notes: {list.notes}</div>)}
     </>
   )
 }
