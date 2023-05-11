@@ -10,7 +10,6 @@ import Tasks from "./components/Tasks/Tasks";
 import NewListForm from "./components/ListNewForm";
 import { authenticate } from "./store/session";
 
-
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
