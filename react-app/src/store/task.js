@@ -49,7 +49,7 @@ export const deleteTask = (taskId) => async dispatch => {
     });
 
     if (response.ok) {
-        const deleteMessage = await res.json();
+        const deleteMessage = await response.json();
         dispatch(removeTask(taskId))
         return deleteMessage
     }
