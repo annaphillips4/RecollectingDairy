@@ -6,7 +6,7 @@ from .auth_routes import validation_errors_to_error_messages
 
 task_routes = Blueprint('tasks', __name__)
 
-@task_routes.route('/')
+@task_routes.route('')
 @login_required
 def all_tasks():
     tasks = Task.query.all()

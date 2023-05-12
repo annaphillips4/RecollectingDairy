@@ -29,6 +29,10 @@ export default function Tasks() {
     await dispatch(loadTasks());
   }
 
+  const handleSmartAdd = () => {
+
+  }
+
   const handleAddDueDate = () => {
     if (inputValue.includes("^")) {
       const regex = /\^([^!@^~#*=+]+)/;
@@ -156,19 +160,18 @@ export default function Tasks() {
           <i class="fa-solid fa-calendar-check"
             onClick={handleAddDueDate}></i>
           <i class="fa-solid fa-calendar-day"
-            onClick={handleAddDueDate}></i>
-          <i class="fa-solid fa-exclamation"
             onClick={handleAddStartDate}></i>
-          <i class="fa-solid fa-rectangle-list"
+          <i class="fa-solid fa-exclamation"
             onClick={handleAddPriority}></i>
-          <i class="fa-solid fa-clock-rotate-left"
+          <i class="fa-solid fa-rectangle-list"
             onClick={handleAddList}></i>
-          <i class="fa-solid fa-location-dot"
+          <i class="fa-solid fa-clock-rotate-left"
             onClick={handleAddRepeat}></i>
-          <i class="fa-solid fa-stopwatch"
+          <i class="fa-solid fa-location-dot"
             onClick={handleAddLocation}></i>
-          <i class="fa-solid fa-user"
+          <i class="fa-solid fa-stopwatch"
             onClick={handleAddEstimate}></i>
+          <i class="fa-solid fa-user"></i>
         </div>
       </form>
       {tasksArr.map((taskObj) => (
