@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 
 class Task(db.Model, UserMixin):
@@ -19,9 +19,9 @@ class Task(db.Model, UserMixin):
   estimate = db.Column(db.Integer, default=0)
   tags = db.Column(db.String(255))
   notes = db.Column(db.Text)
-  list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'))
-  owner_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
-  assigned_user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=True)
+  list_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('lists.id'), ondelete='CASCADE'), nullable=False)
+  owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id'), ondelete='CASCADE'), nullable=False)
+  assigned_user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id'), ondelete='CASCADE'), nullable=True)
 
   list = db.relationship('List', back_populates='tasks')
   owner = db.relationship(

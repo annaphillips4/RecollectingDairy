@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 
 class List_User(db.Model, UserMixin):
@@ -8,8 +8,8 @@ class List_User(db.Model, UserMixin):
     __table_args__ = {'schema': SCHEMA}
 
   id = db.Column(db.Integer, primary_key=True)
-  user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete="CASCADE"), nullable=False)
-  list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete="CASCADE"), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id'), ondelete="CASCADE"), nullable=False)
+  list_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('lists.id'), ondelete="CASCADE"), nullable=False)
   edit_priv = db.Column(db.Boolean, default=False, nullable=False)
 
   user = db.relationship('User', back_populates='list_users')
