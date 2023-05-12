@@ -9,7 +9,7 @@ class Task(db.Model, UserMixin):
 
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(255), nullable=False)
-  completed = db.Column(db.Boolean)
+  completed = db.Column(db.Boolean, default=False)
   due_date = db.Column(db.Date)
   start_date = db.Column(db.Date)
   priority = db.Column(db.Integer)
@@ -19,7 +19,7 @@ class Task(db.Model, UserMixin):
   estimate = db.Column(db.Integer, default=0)
   tags = db.Column(db.String(255))
   notes = db.Column(db.Text)
-  list_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('lists.id'), ondelete='CASCADE'), nullable=False)
+  list_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('lists.id'), ondelete='CASCADE'))
   owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id'), ondelete='CASCADE'), nullable=False)
   assigned_user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id'), ondelete='CASCADE'), nullable=True)
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadTasks, postTask, deleteTask } from "../../store/task";
+import { loadTasks, postTask, editTask, deleteTask } from "../../store/task";
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -24,78 +24,36 @@ export default function Tasks() {
     }
   }
 
+  const handleEditTask = async (taskId, bool) => {
+    const updatedTask = {
+      ...tasks[taskId],
+      completed: bool,
+    };
+
+    await dispatch(editTask(updatedTask));
+    await dispatch(loadTasks());
+  };
+
   const handleDelete = async (taskId) => {
     await dispatch(deleteTask(taskId));
     await dispatch(loadTasks());
   }
 
-  const handleSmartAdd = () => {
+  RegExp.escape = function (string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // Escape special characters
+  };
 
-  }
+  const handleSmartAdd = (tag) => {
+    const escapedTag = RegExp.escape(tag);
+    const regex = new RegExp(`${escapedTag}([^!@^~#*=+]+)?`);
 
-  const handleAddDueDate = () => {
-    if (inputValue.includes("^")) {
-      const regex = /\^([^!@^~#*=+]+)/;
+    if (inputValue.includes(tag)) {
       setInputValue((prevValue) => prevValue.replace(regex, ""));
     } else {
-      setInputValue((prevValue) => prevValue + " ^");
+      setInputValue((prevValue) => prevValue + ` ${tag}`);
     }
   };
 
-
-  const handleAddStartDate = () => {
-    if (inputValue.includes("~")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " ~");
-    }
-  };
-
-  const handleAddPriority = () => {
-    if (inputValue.includes("!")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " !");
-    }
-  };
-
-  const handleAddList = () => {
-    if (inputValue.includes("#")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " #");
-    }
-  };
-
-  const handleAddRepeat = () => {
-    if (inputValue.includes("*")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " *");
-    }
-  };
-
-  const handleAddLocation = () => {
-    if (inputValue.includes("@")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " @");
-    }
-  };
-
-  const handleAddEstimate = () => {
-    if (inputValue.includes("=")) {
-      const regex = /\^([^!@^~#*=+]+)/;
-      setInputValue((prevValue) => prevValue.replace(regex, ""));
-    } else {
-      setInputValue((prevValue) => prevValue + " =");
-    }
-  };
 
   function parseInputString(input) {
     const tagPattern = /([!@^~#*=+])([^!@^~#*=+]+)/g;
@@ -157,27 +115,55 @@ export default function Tasks() {
         />
         <button type="submit">Add Task</button>
         <div>
-          <i class="fa-solid fa-calendar-check"
-            onClick={handleAddDueDate}></i>
-          <i class="fa-solid fa-calendar-day"
-            onClick={handleAddStartDate}></i>
-          <i class="fa-solid fa-exclamation"
-            onClick={handleAddPriority}></i>
-          <i class="fa-solid fa-rectangle-list"
-            onClick={handleAddList}></i>
-          <i class="fa-solid fa-clock-rotate-left"
-            onClick={handleAddRepeat}></i>
-          <i class="fa-solid fa-location-dot"
-            onClick={handleAddLocation}></i>
-          <i class="fa-solid fa-stopwatch"
-            onClick={handleAddEstimate}></i>
-          <i class="fa-solid fa-user"></i>
+          <i
+            className="fa-solid fa-calendar-check"
+            onClick={() => handleSmartAdd('^')}
+          ></i>
+          <i
+            className="fa-solid fa-calendar-day"
+            onClick={() => handleSmartAdd('~')}
+          ></i>
+          <i
+            className="fa-solid fa-exclamation"
+            onClick={() => handleSmartAdd('!')}
+          ></i>
+          <i
+            className="fa-solid fa-rectangle-list"
+            onClick={() => handleSmartAdd('#')}
+          ></i>
+          <i
+            className="fa-solid fa-clock-rotate-left"
+            onClick={() => handleSmartAdd('*')}
+          ></i>
+          <i
+            className="fa-solid fa-location-dot"
+            onClick={() => handleSmartAdd('@')}
+          ></i>
+          <i
+            className="fa-solid fa-stopwatch"
+            onClick={() => handleSmartAdd('=')}
+          ></i>
+          {/* <i className="fa-solid fa-user"></i> */}
         </div>
       </form>
       {tasksArr.map((taskObj) => (
         <div key={taskObj.id}>
+          {taskObj.completed && (
+            <i
+              className="fa-regular fa-square-check"
+              onClick={() => handleEditTask(taskObj.id, false)}
+            ></i>
+          )}
+          {!taskObj.completed && (
+            <i
+              className="fa-regular fa-square"
+              onClick={() => handleEditTask(taskObj.id, true)}
+            ></i>
+          )}
           {taskObj.name}
-          <a onClick={() => handleDelete(taskObj.id)}><i class="fa-solid fa-trash-can"></i></a>
+          <a onClick={() => handleDelete(taskObj.id)}>
+            <i className="fa-solid fa-trash-can"></i>
+          </a>
         </div>
       ))}
     </>

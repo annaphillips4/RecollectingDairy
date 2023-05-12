@@ -5,7 +5,7 @@ from datetime import date
 def seed_tasks():
   groceries = Task(
     name='Go to Whole Foods for groceries',
-    completed=False,
+    completed=True,
     due_date=date(2069, 1, 1),
     start_date=date(2023, 1, 1),
     priority=1,

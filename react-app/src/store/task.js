@@ -52,7 +52,7 @@ export const postTask = (payload) => async dispatch => {
 export const editTask = (task) => async (dispatch) => {
     try {
         const taskId = task.id;
-        const response = await fetch(`/api/lists/${taskId}`, {
+        const response = await fetch(`/api/tasks/${taskId}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json'
