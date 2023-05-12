@@ -19,7 +19,7 @@ class Task(db.Model, UserMixin):
   estimate = db.Column(db.Integer, default=0)
   tags = db.Column(db.String(255))
   notes = db.Column(db.Text)
-  list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'), nullable=False)
+  list_id = db.Column(db.Integer, db.ForeignKey('lists.id', ondelete='CASCADE'))
   owner_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
   assigned_user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=True)
 
