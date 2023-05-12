@@ -14,4 +14,4 @@ class NewTask(FlaskForm):
     estimate = IntegerField(default=0)
     tags = StringField()
     notes = TextAreaField()
-    submit = SubmitField
+    submit = SubmitField()

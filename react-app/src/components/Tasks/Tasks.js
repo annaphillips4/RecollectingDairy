@@ -5,6 +5,7 @@ import { loadTasks, postTask, deleteTask } from "../../store/task";
 export default function Tasks() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks);
+  const ownerId = useSelector((state) => state.session.user.id)
   const tasksArr = Object.values(tasks);
   const [inputValue, setInputValue] = useState("");
 
@@ -23,14 +24,18 @@ export default function Tasks() {
     }
   }
 
-  const handleDelete = (taskId) => {
-    dispatch(deleteTask(taskId));
+  const handleDelete = async (taskId) => {
+    await dispatch(deleteTask(taskId));
+    await dispatch(loadTasks());
   }
+
 
   function parseInputString(input) {
     const tagPattern = /([!@^~#*=+])([^!@^~#*=+]+)/g;
     const matches = input.matchAll(tagPattern);
-    const payload = {};
+    const payload = {
+      owner_id: ownerId,
+    };
 
     const nameMatch = /^([^!@^~#*=+]+)/.exec(input);
     if (nameMatch) {

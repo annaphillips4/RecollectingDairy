@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 
 class List(db.Model, UserMixin):
@@ -12,7 +12,7 @@ class List(db.Model, UserMixin):
     # num_tasks = db.Column(db.Integer)
     # num_completed = db.Column(db.Integer)
     notes = db.Column(db.String(255))
-    owner_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id"), ondelete="CASCADE"), nullable=False)
 
     owner = db.relationship('User', back_populates='lists')
     list_users = db.relationship('List_User', back_populates='list')

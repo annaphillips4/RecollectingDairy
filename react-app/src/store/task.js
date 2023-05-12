@@ -12,9 +12,9 @@ const addTask = task => ({
     task
 })
 
-const removeTask = task => ({
+const removeTask = (taskId) => ({
     type: DELETE_TASK,
-    task
+    taskId
 })
 
 export const loadTasks = () => async dispatch => {
@@ -28,7 +28,7 @@ export const loadTasks = () => async dispatch => {
 
 export const postTask = (payload) => async dispatch => {
     console.log("in postTasks")
-    const res = await fetch('/api/new_task', {
+    const res = await fetch('/api/tasks/', {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(payload),
@@ -44,14 +44,14 @@ export const postTask = (payload) => async dispatch => {
 }
 
 export const deleteTask = (taskId) => async dispatch => {
-    const res = await fetch(`api/tasks/${taskId}`, {
+    const response = await fetch(`api/tasks/${taskId}`, {
         method: 'DELETE'
     });
 
-    if (res.ok) {
-        const task = await res.json();
-        dispatch(removeTask(task))
-        return task
+    if (response.ok) {
+        const deleteMessage = await response.json();
+        dispatch(removeTask(taskId))
+        return deleteMessage
     }
 }
 
@@ -63,9 +63,9 @@ const tasksReducer = (state = initialState, action) => {
         case ADD_TASK:
             return { ...state, [action.task.id]: action.task }
         case DELETE_TASK:
-            const newState = { ...state }
-            delete newState[action.task.id]
-            return newState
+            const stateMinusTask = { ...state }
+            delete stateMinusTask[action.taskId]
+            return stateMinusTask
         default: return state
     }
 }
