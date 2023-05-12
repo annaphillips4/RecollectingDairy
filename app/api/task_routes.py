@@ -45,13 +45,13 @@ def post_new_task():
         return new_task.to_dict()
     return jsonify({'error': '400 Bad Request'})
 
-@task_routes.route('/<int:id>', methods=['DELETE'])
-# @login_required
-def delete_task_by_id(id):
-    task = Task.query.get(id)
+@task_routes.route('/<int:task_id>', methods=['DELETE'])
+@login_required
+def delete_task_by_id(task_id):
+    task = Task.query.get(task_id)
     if task:
         db.session.delete(task)
         db.session.commit()
-        return jsonify({'message': f'Task with ID {id} deleted successfully.'})
+        return jsonify({'message': f'Task with ID {task_id} deleted successfully.'})
     else:
-        return jsonify({'error': f'Task with ID {id} not found.'}), 404
+        return jsonify({'error': f'Task with ID {task_id} not found.'}), 404
