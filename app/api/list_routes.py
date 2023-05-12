@@ -8,8 +8,10 @@ from .auth_routes import validation_errors_to_error_messages
 list_routes = Blueprint('lists', __name__)
 
 @list_routes.route('', methods=['GET'])
+@login_required
 def lists():
-  return {list.id: list.to_dict() for list in List.query.all()}
+  my_lists = List.query.filter(List.owner_id == current_user.id).all()
+  return {list.id: list.to_dict() for list in my_lists}
 
 @list_routes.route('/', methods=['POST'])
 @login_required
