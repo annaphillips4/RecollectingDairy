@@ -22,6 +22,8 @@ export default function Tasks() {
     if (newReview) {
       await dispatch(loadTasks)
     }
+
+    setInputValue('')
   }
 
   const handleEditTask = async (taskId, bool) => {
