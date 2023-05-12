@@ -15,10 +15,10 @@ export default function Tasks() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const payload = parseInputString(inputValue);
-    console.log(payload); // TODO: Submit the form values
     let newReview = await dispatch(postTask(payload))
-    console.log(newReview)
+
     if (newReview) {
       await dispatch(loadTasks)
     }
@@ -29,6 +29,69 @@ export default function Tasks() {
     await dispatch(loadTasks());
   }
 
+  const handleAddDueDate = () => {
+    if (inputValue.includes("^")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " ^");
+    }
+  };
+
+
+  const handleAddStartDate = () => {
+    if (inputValue.includes("~")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " ~");
+    }
+  };
+
+  const handleAddPriority = () => {
+    if (inputValue.includes("!")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " !");
+    }
+  };
+
+  const handleAddList = () => {
+    if (inputValue.includes("#")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " #");
+    }
+  };
+
+  const handleAddRepeat = () => {
+    if (inputValue.includes("*")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " *");
+    }
+  };
+
+  const handleAddLocation = () => {
+    if (inputValue.includes("@")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " @");
+    }
+  };
+
+  const handleAddEstimate = () => {
+    if (inputValue.includes("=")) {
+      const regex = /\^([^!@^~#*=+]+)/;
+      setInputValue((prevValue) => prevValue.replace(regex, ""));
+    } else {
+      setInputValue((prevValue) => prevValue + " =");
+    }
+  };
 
   function parseInputString(input) {
     const tagPattern = /([!@^~#*=+])([^!@^~#*=+]+)/g;
@@ -90,18 +153,26 @@ export default function Tasks() {
         />
         <button type="submit">Add Task</button>
         <div>
-          <i class="fa-solid fa-calendar-check"></i>
-          <i class="fa-solid fa-calendar-day"></i>
-          <i class="fa-solid fa-exclamation"></i>
-          <i class="fa-solid fa-rectangle-list"></i>
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <i class="fa-solid fa-location-dot"></i>
-          <i class="fa-solid fa-stopwatch"></i>
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-calendar-check"
+            onClick={handleAddDueDate}></i>
+          <i class="fa-solid fa-calendar-day"
+            onClick={handleAddDueDate}></i>
+          <i class="fa-solid fa-exclamation"
+            onClick={handleAddStartDate}></i>
+          <i class="fa-solid fa-rectangle-list"
+            onClick={handleAddPriority}></i>
+          <i class="fa-solid fa-clock-rotate-left"
+            onClick={handleAddList}></i>
+          <i class="fa-solid fa-location-dot"
+            onClick={handleAddRepeat}></i>
+          <i class="fa-solid fa-stopwatch"
+            onClick={handleAddLocation}></i>
+          <i class="fa-solid fa-user"
+            onClick={handleAddEstimate}></i>
         </div>
       </form>
       {tasksArr.map((taskObj) => (
-        <div>
+        <div key={taskObj.id}>
           {taskObj.name}
           <a onClick={() => handleDelete(taskObj.id)}><i class="fa-solid fa-trash-can"></i></a>
         </div>
