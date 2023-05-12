@@ -56,7 +56,7 @@ export const newList = (list) => async (dispatch) => {
 export const editList = (list) => async (dispatch) => {
   try {
     const listId = list.id;
-    const response = await csrfFetch(`/api/lists/${listId}`, {
+    const response = await fetch(`/api/lists/${listId}`, {
         method: 'put',
         headers: {
             'Content-Type': 'application/json'
