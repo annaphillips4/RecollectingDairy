@@ -38,11 +38,12 @@ def add_list():
         return list.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-@list_routes.route('/<int:id>', methods=['PUT'])
+@list_routes.route('/<int:list_id>', methods=['PUT'])
 @login_required
-def edit_list(id):
+def edit_list(list_id):
    form = ListForm()
-   list = List.query.filter(List.id == id, List.owner_id == current_user.id).first()
+   form['csrf_token'].data = request.cookies['csrf_token']
+   list = List.query.filter(List.id == list_id, List.owner_id == current_user.id).first()
    if not list:
       return jsonify({'error': 'List not found'}), 404
    elif form.validate_on_submit():
@@ -58,12 +59,12 @@ def edit_list(id):
       return list.to_dict()
    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-@list_routes.route('/<int:id>', methods=['DELETE'])
+@list_routes.route('/<int:list_id>', methods=['DELETE'])
 @login_required
-def delete_list(id):
-    list = List.query.filter(List.id == id, List.owner_id == current_user.id).first()
+def delete_list(list_id):
+    list = List.query.filter(List.id == list_id, List.owner_id == current_user.id).first()
     if list:
         db.session.delete(list)
         db.session.commit()
-        return jsonify({'message': f'List with ID {id} deleted successfully.'}), 200
-    return jsonify({'error': f'List with ID {id} not found for user {current_user.username}.'}), 404
+        return jsonify({'message': f'List with ID {list_id} deleted successfully.'}), 200
+    return jsonify({'error': f'List with ID {list_id} not found for user {current_user.username}.'}), 404
