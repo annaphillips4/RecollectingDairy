@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listActions from "../../store/list";
@@ -18,7 +18,7 @@ const NewListForm = () => {
     const list = { name, notes, owner_id: currentUser.id }
 
     return dispatch(listActions.newList(list))
-      .then((res) => history.push("/lists"))
+      // .then((res) => history.push("/lists"))
       .catch(async (res) => {
         const data = await res.json();
         if (data & data.errors) setErrors(data.errors);

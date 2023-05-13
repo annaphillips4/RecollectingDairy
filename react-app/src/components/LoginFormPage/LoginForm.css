@@ -1,0 +1,124 @@
+.main-login-container {
+  position: fixed;
+  height: 100vh;
+  width: 50%;
+  background: #0060bf;
+}
+
+.row {
+  width: 100vw;
+}
+
+.login-container-left {
+  width: 50%;
+  float: left;
+}
+
+.left-offset {
+  margin-left: 25%;
+}
+
+.logo {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683585510/dairy/logo3_bvkszz.png);
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+}
+
+.quote {
+  margin-top: 200px;
+  margin-left: -5px;
+}
+
+.quote>p {
+  white-space: pre-line;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.2;
+  max-width: 400px;
+}
+
+.quote>footer {
+  color: #fff;
+  font-size: 20px;
+  opacity: .6;
+  margin-top: -10px;
+}
+
+.login-steve {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683961879/dairy/hp_steve_2_fvaodd.png);
+  background-repeat: no-repeat;
+  background-size: 400px auto;
+  height: 300px;
+  width: 400px;
+  margin-top: 100px;
+}
+
+.login-container-right {
+  width: 50%;
+  float: right;
+}
+
+.right-offset {
+  width: 400px;
+  margin-left: 75px;
+}
+
+#signup-button {
+  float: right;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 96, 191, 0.1);
+  border-color: transparent;
+  padding: 5px 11px 4px;
+  margin-top: 50px;
+}
+
+#signup-button:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.login-box {
+  float: left;
+  margin-top: 150px;
+  width: 100%;
+}
+
+.login-box>h3 {
+  font-size: 21px;
+  color: #000;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  font-weight: 100;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  height: 30px;
+  width: 93%;
+  font-size: 22px;
+  color: #555555;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.login-button {
+  height: 50px;
+  width: 99.5%;
+  font-size: 22px;
+  color: #fff;
+  background-color: #009dff;
+  border-color: transparent;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.login-button:hover {
+  background: #0074e9;
+  cursor: pointer;
+}

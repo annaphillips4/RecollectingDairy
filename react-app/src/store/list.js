@@ -1,5 +1,6 @@
 const LOAD_LISTS = "lists/LOAD_LISTS"
 const ADD_LIST = "lists/ADD_LIST"
+const UPDATE_LIST = "lists/UPDATE_LIST"
 const DELETE_LIST = "lists/DELETE_LIST"
 
 const getLists = (lists) => ({
@@ -9,6 +10,11 @@ const getLists = (lists) => ({
 
 const addList = (list) => ({
   type: ADD_LIST,
+  list
+});
+
+const updateList = (list) => ({
+  type: UPDATE_LIST,
   list
 });
 
@@ -47,6 +53,39 @@ export const newList = (list) => async (dispatch) => {
   }
 };
 
+export const editList = (list) => async (dispatch) => {
+  try {
+    const listId = list.id;
+    const response = await fetch(`/api/lists/${listId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(list)
+    });
+
+    if (!response.ok) {
+        const error = await response.text();
+        let errorJSON;
+        try {
+            // check to see if error is JSON
+            errorJSON = JSON.parse(error);
+        } catch {
+            // error was not from server
+            throw new Error(error);
+        }
+        throw new Error(`${errorJSON.title}: ${errorJSON.message}`);
+    }
+
+    const changedList = await response.json();
+    dispatch(updateList(changedList));
+    return changedList;
+
+  } catch (error) {
+      throw error;
+  }
+};
+
 export const deleteList = (listId) => async (dispatch) => {
   try {
       const response = await fetch(`/api/lists/${listId}`, {
@@ -82,25 +121,27 @@ const listsReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case LOAD_LISTS:
-      return { ...state, ...action.lists }
+      return { ...state, ...action.lists };
     case ADD_LIST:
-      newState = { ...state, [action.list.id]: action.list }
+      newState = { ...state, [action.list.id]: action.list };
       return newState;
-      case DELETE_LIST:
-        const stateMinusList = {...state};
-        // const newIds = [];
-        // state.allIds.forEach((id) => {
-        //     if (id !== action.listId) newIds.push(id);
-        // });
+    case UPDATE_LIST:
+      return {...state, [action.list.id]: {...action.list}};
+    case DELETE_LIST:
+      const stateMinusList = {...state};
+      // const newIds = [];
+      // state.allIds.forEach((id) => {
+      //     if (id !== action.listId) newIds.push(id);
+      // });
 
-        delete stateMinusList[action.listId];
+      delete stateMinusList[action.listId];
 
-        // return {...stateMinusList, allIds: newIds};
-        return {...stateMinusList};
+      // return {...stateMinusList, allIds: newIds};
+      return {...stateMinusList};
 
     default:
-      return state
+      return state;
   }
 };
 
-export default listsReducer
+export default listsReducer;

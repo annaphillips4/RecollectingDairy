@@ -1,28 +1,40 @@
 from flask import Blueprint, jsonify, render_template, request
 from flask_login import current_user, login_required
 from app.models import Task, db
-from ..forms.task_form import NewTask
+from app.forms import TaskForm
+from .auth_routes import validation_errors_to_error_messages
 
 task_routes = Blueprint('tasks', __name__)
 
-@task_routes.route('/')
-# @login_required
+@task_routes.route('')
+@login_required
 def all_tasks():
-    tasks = Task.query.all()
-    return {task.id: task.to_dict() for task in Task.query.all()}
+    all_tasks = Task.query.all()
+    user_id = current_user.id
+    owned_tasks = []
+    assigned_tasks = []
+    for task in all_tasks:
+        if task.id == user_id:
+            owned_tasks.append(task)
+        elif task.assigned_user_id == user_id:
+            assigned_tasks.append(task)
 
-@task_routes.route('/<int:id>')
-# @login_required
-def task_by_id(id):
-    task = Task.query.get(id)
+    current_user_tasks = owned_tasks + assigned_tasks
+
+    return {task.id: task.to_dict() for task in current_user_tasks}
+
+@task_routes.route('/<int:task_id>')
+@login_required
+def task_by_id(task_id):
+    task = Task.query.get(task_id)
     return task.to_dict()
 
 @task_routes.route('/', methods=['POST'])
 @login_required
 def post_new_task():
-    print("inside POST route")
+    # print("inside POST route")
     payload = request.json
-    form = NewTask()
+    form = TaskForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         # new_task = NewTask(
@@ -37,13 +49,38 @@ def post_new_task():
         #     estimate=payload['estimate'],
         #     tags=payload['tags'],
         #     notes=payload['notes'],
-        #     submit=payload['submit']
         # )
-        new_task = Task(**request.json)
+        new_task = Task(**payload)
         db.session.add(new_task)
         db.session.commit()
         return new_task.to_dict()
-    return jsonify({'error': '400 Bad Request'})
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@task_routes.route('/<int:task_id>', methods=['PUT'])
+@login_required
+def edit_task(task_id):
+    form = TaskForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    task = Task.query.get(task_id)
+    if not task:
+        return jsonify({'error': f'Task with ID {task_id} not found.'}), 404
+    elif form.validate_on_submit():
+        task.name = form.data['name']
+        task.completed = form.data['completed']
+        task.due_date = form.data['due_date']
+        task.start_date = form.data['start_date']
+        task.priority = form.data['priority']
+        task.repeat_period = form.data['repeat_period']
+        task.repeat_type = form.data['repeat_type']
+        task.location = form.data['location']
+        task.estimate = form.data['estimate']
+        task.tags = form.data['tags']
+        task.notes = form.data['notes']
+        db.session.commit()
+        return task.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
 
 @task_routes.route('/<int:task_id>', methods=['DELETE'])
 @login_required

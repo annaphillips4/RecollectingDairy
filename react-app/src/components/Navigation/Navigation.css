@@ -47,7 +47,7 @@ body {
 
 .navbar-right-nav>li {
   float: left;
-  margin-left: 70px;
+  margin-left: 50px;
 }
 
 .navbar-right-nav>li>.user-links {
@@ -62,7 +62,7 @@ body {
   opacity: 1;
 }
 
-.navbar-right-nav>li>#signup-button {
+.navbar-right-nav>li>#nav-signup-button {
   border: 2px solid;
   padding: 10px;
 }
