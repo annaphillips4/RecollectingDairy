@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import './LoginForm.css';
 
+const demo_email = "demo@aa.io";
+const demo_password = "password";
+
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
@@ -16,6 +19,14 @@ function LoginFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
+    if (data) {
+      setErrors(data);
+    }
+  };
+
+  const logInDemo = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(login(demo_email, demo_password));
     if (data) {
       setErrors(data);
     }
@@ -80,8 +91,15 @@ function LoginFormPage() {
 
             </div>
           </div>
-
+          <div className="demo-login">
+          <button className="demo-login"
+            onClick={logInDemo}
+            >Demo User
+          </button>
+        </div>
         </section>
+
+
 
       </main>
     </>
