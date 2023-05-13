@@ -9,8 +9,19 @@ task_routes = Blueprint('tasks', __name__)
 @task_routes.route('')
 @login_required
 def all_tasks():
-    tasks = Task.query.all()
-    return {task.id: task.to_dict() for task in Task.query.all()}
+    all_tasks = Task.query.all()
+    user_id = current_user.id
+    owned_tasks = []
+    assigned_tasks = []
+    for task in all_tasks:
+        if task.id == user_id:
+            owned_tasks.append(task)
+        elif task.assigned_user_id == user_id:
+            assigned_tasks.append(task)
+
+    current_user_tasks = owned_tasks + assigned_tasks
+
+    return {task.id: task.to_dict() for task in current_user_tasks}
 
 @task_routes.route('/<int:task_id>')
 @login_required
