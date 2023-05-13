@@ -38,8 +38,6 @@ function LoginFormPage() {
               <div className="login-steve">
               </div>
             </div>
-
-
           </div>
 
           <div className="login-container-right">
