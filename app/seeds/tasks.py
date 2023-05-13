@@ -592,10 +592,10 @@ def seed_tasks():
     owner_id=2
     )
 
-  tasks = [wt1, wt8, wt2, wt3, wt4, wt5, wt6, wt7, wt9, errand1, errand2, errand3, errand4, errand5, errand6, errand7, errand8, errand9, errand10, errand11, errand12, errand13, errand14, errand15, hip1, hip2, hip3, hip4, fitgoals1, fitgoals2, fitgoals3, fitgoals4]
+  tasks = [wt1, wt8, wt2, wt3, wt4, wt5, wt6, wt7, wt9, errand1, errand2, errand3, errand4, errand5, errand6, errand7, errand8, errand9, errand10, errand11, errand12, errand13, errand14, errand15, hip1, hip2, hip3, hip4, fitgoals1, fitgoals2, fitgoals3, fitgoals4, fitgoals5, fitgoals6]
   for task in tasks:
     db.session.add(task)
-    
+
   db.session.commit()
 
 def undo_tasks():
