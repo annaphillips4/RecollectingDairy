@@ -77,16 +77,41 @@ body {
   vertical-align: top;
 }
 
-.steve {
+.steves-container {
+  height: 350px;
+  position: relative;
+  top: -75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.steve1 {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683969777/dairy/hp_steve_4_vfmust.png);
+  background-repeat: no-repeat;
+  background-size: 425px auto;
+  width: 450px;
+  height: 450px;
+  padding-right: 250px;
+  position: relative;
+  top: -40px;
+}
+
+.steve2 {
   background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683835701/dairy/hp_steve_1_xbdofm.png);
   background-repeat: no-repeat;
-  background-size: 300px auto;
+  background-size: 280px auto;
   width: 400px;
   height: 360px;
-  display: inline-block;
-  margin-left: 90px;
-  position: relative;
-  top: -70px;
+}
+
+.steve3 {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683970507/dairy/upgrade_steve_zduptf.png);
+  background-repeat: no-repeat;
+  background-size: 450px auto;
+  width: 450px;
+  height: 450px;
+  margin-left: 150px;
 }
 
 .main-content>h2 {
