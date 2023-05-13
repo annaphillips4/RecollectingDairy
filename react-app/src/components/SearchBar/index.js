@@ -6,7 +6,7 @@ function App() {
     return (
       <div>
         <input type="text" placeholder="Search..." ></input>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <i className="fa-solid fa-magnifying-glass"></i>
       </div>
     );
   }
