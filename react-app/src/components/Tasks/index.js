@@ -149,8 +149,8 @@ export default function Tasks() {
         </div>
       </form>
       {tasksArr.map((taskObj) => (
-        <div key={taskObj.id}>
-          {taskObj.completed && (
+        <div key={taskObj.id} className="deletable">
+          <span>{taskObj.completed && (
             <i
               className="fa-regular fa-square-check"
               onClick={() => handleEditTask(taskObj.id, false)}
@@ -162,10 +162,8 @@ export default function Tasks() {
               onClick={() => handleEditTask(taskObj.id, true)}
             ></i>
           )}
-          {taskObj.name}
-          <button onClick={() => handleDelete(taskObj.id)}>
-            <i className="fa-solid fa-trash-can"></i>
-          </button>
+          {taskObj.name}</span>
+            <i className="fa-solid fa-trash-can" onClick={() => handleDelete(taskObj.id)}></i>
         </div>
       ))}
     </>
