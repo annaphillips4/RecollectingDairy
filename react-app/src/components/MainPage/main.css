@@ -1,40 +1,57 @@
 .app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  .search-bar {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    width: 100%;
-  }
+.top-nav-bar {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+  background-color: #0060bf;
+  justify-content: center;
+}
 
-  .content-container {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-  }
+.search-bar {
+  position: relative;
+  left: 220px;
+  background-color: rgba(255,255,255,0.2);
+  margin: auto 0px;
+}
 
-  .sidebar {
-    flex: 0 0 auto;
-    width: 250px;
-    position: sticky;
-    top: 50px;
-    background-color: #f1f1f1;
-  }
+#search-icon {
+  position: relative;
+  left: 200px;
+  padding-right: 10px;
+  color: rgba(255,255,255,0.7);
+  margin: auto 0px;
+}
 
-  .tasks {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-  }
+.content-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
 
-  .summary {
-    flex: 0 0 auto;
-    width: 250px;
-    position: sticky;
-    top: 50px;
-    background-color: #f1f1f1;
-  }
+.sidebar {
+  flex: 0 0 auto;
+  width: 250px;
+  position: sticky;
+  top: 50px;
+  background-color: #f1f1f1;
+}
+
+.tasks {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.summary {
+  flex: 0 0 auto;
+  width: 250px;
+  position: sticky;
+  top: 50px;
+  background-color: #f1f1f1;
+}
