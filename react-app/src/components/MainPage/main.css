@@ -1,0 +1,40 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .search-bar {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .content-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    flex: 0 0 auto;
+    width: 250px;
+    position: sticky;
+    top: 50px;
+    background-color: #f1f1f1;
+  }
+
+  .tasks {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .summary {
+    flex: 0 0 auto;
+    width: 250px;
+    position: sticky;
+    top: 50px;
+    background-color: #f1f1f1;
+  }

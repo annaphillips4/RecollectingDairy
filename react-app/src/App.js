@@ -3,10 +3,8 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
-import Lists from "./components/Lists";
+import Main from "./components/MainPage";
 import LandingPage from "./components/Landing";
-import Tasks from "./components/Tasks/Tasks";
-import NewListForm from "./components/ListNewForm";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -29,14 +27,8 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path="/lists">
-            <Lists />
-          </Route>
-          <Route path="/lists/new">
-            <NewListForm />
-          </Route>
-          <Route path="/tasks">
-            <Tasks />
+          <Route exact path="/app">
+            <Main />
           </Route>
         </Switch>
       )}
