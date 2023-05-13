@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import "./main.css"
 
 function App() {
 
     return (
-      <div>
-        <input type="text" placeholder="Search..." ></input>
-        <i className="fa-solid fa-magnifying-glass"></i>
+      <div className="search-container">
       </div>
     );
   }

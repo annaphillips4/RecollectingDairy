@@ -10,14 +10,17 @@ function App() {
 
     return (
       <div className="app-container">
-        <div className="search-bar">
-          <SearchBar />
+        <div className="top-nav-bar">
+          <i id="search-icon" className="fa-solid fa-magnifying-glass"></i>
+          <div className="search-bar">
+            <input type="text" placeholder="Search..." ></input>
+          </div>
         </div>
 
         <div className="content-container">
           <div className="sidebar">
             <Lists />
-            
+
           </div>
 
           <div className="tasks">
