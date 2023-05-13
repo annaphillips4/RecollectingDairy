@@ -15,7 +15,10 @@ def seed_lists():
     workpro = List(
         name='Work Project', notes="Go over with boss on Monday", owner_id=3)
 
-    db.session.add(groceries)
+    db.session.add(workTasks)
+    db.session.add(errands)
+    db.session.add(homeImpPro)
+    db.session.add(fitnessGoals)
     db.session.add(chores)
     db.session.add(workpro)
     db.session.commit()
