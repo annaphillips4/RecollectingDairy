@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+// import { useSelector } from 'react-redux';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
-	const sessionUser = useSelector(state => state.session.user);
+	// const sessionUser = useSelector(state => state.session.user);
 
 	const login = (
 		<li>
@@ -15,7 +14,7 @@ function Navigation({ isLoaded }) {
 
 	const signup = (
 		<li>
-			<Link class="user-links" id="signup-button" to="/signup">Sign up for free</Link>
+			<Link class="user-links" id="nav-signup-button" to="/signup">Sign up for free</Link>
 		</li>
 	)
 

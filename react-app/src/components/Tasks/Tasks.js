@@ -163,9 +163,9 @@ export default function Tasks() {
             ></i>
           )}
           {taskObj.name}
-          <a onClick={() => handleDelete(taskObj.id)}>
+          <button onClick={() => handleDelete(taskObj.id)}>
             <i className="fa-solid fa-trash-can"></i>
-          </a>
+          </button>
         </div>
       ))}
     </>

@@ -1,16 +1,22 @@
 body {
-  line-height: 1.42857143;
-  background-color: #0060bf;
   font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .main-container {
   position: relative;
-  top: 150px;
+  /* top: 150px; */
+  background-color: #0060bf;
+  height: 100vh;
 }
 
 .main-header {
   text-align: center;
+  position: relative;
+  top: 150px;
+  margin-bottom: 250px;
 }
 
 .header-container {

@@ -57,7 +57,7 @@ export const editList = (list) => async (dispatch) => {
   try {
     const listId = list.id;
     const response = await fetch(`/api/lists/${listId}`, {
-        method: 'put',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },

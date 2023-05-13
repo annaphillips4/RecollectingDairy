@@ -53,7 +53,7 @@ export const editTask = (task) => async (dispatch) => {
     try {
         const taskId = task.id;
         const response = await fetch(`/api/tasks/${taskId}`, {
-            method: 'put',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
