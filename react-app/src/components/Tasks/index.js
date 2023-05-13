@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadTasks, postTask, editTask, deleteTask } from "../../store/task";
+import { useParams } from "react-router-dom";
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -8,6 +9,10 @@ export default function Tasks() {
   const ownerId = useSelector((state) => state.session.user.id)
   const tasksArr = Object.values(tasks);
   const [inputValue, setInputValue] = useState("");
+
+  const { listId } = useParams()
+  let numListId
+  listId === undefined ? numListId = false : numListId = parseInt(listId)
 
   useEffect(() => {
     dispatch(loadTasks());
@@ -148,24 +153,29 @@ export default function Tasks() {
           {/* <i className="fa-solid fa-user"></i> */}
         </div>
       </form>
-      {tasksArr.map((taskObj) => (
-        <div key={taskObj.id} className="deletable">
-          <span>{taskObj.completed && (
-            <i
-              className="fa-regular fa-square-check"
-              onClick={() => handleEditTask(taskObj.id, false)}
-            ></i>
-          )}
-          {!taskObj.completed && (
-            <i
-              className="fa-regular fa-square"
-              onClick={() => handleEditTask(taskObj.id, true)}
-            ></i>
-          )}
-          {taskObj.name}</span>
-            <i className="fa-solid fa-trash-can" onClick={() => handleDelete(taskObj.id)}></i>
-        </div>
-      ))}
+      {tasksArr.map((taskObj) => {
+        if (numListId === false || taskObj.listId === numListId) {
+          return (
+            <div key={taskObj.id} className="deletable">
+              <span>{taskObj.completed && (
+                <i
+                  className="fa-regular fa-square-check"
+                  onClick={() => handleEditTask(taskObj.id, false)}
+                ></i>
+              )}
+              {!taskObj.completed && (
+                <i
+                  className="fa-regular fa-square"
+                  onClick={() => handleEditTask(taskObj.id, true)}
+                ></i>
+              )}
+              {taskObj.name}</span>
+                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(taskObj.id)}></i>
+            </div>
+          )
+        }
+        return null
+      })}
     </>
   );
 }

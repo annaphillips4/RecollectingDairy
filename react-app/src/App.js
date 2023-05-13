@@ -30,6 +30,9 @@ function App() {
           <Route exact path="/app">
             <Main />
           </Route>
+          <Route exact path="/app/list/:listId">
+            <Main />
+          </Route>
         </Switch>
       )}
     </>

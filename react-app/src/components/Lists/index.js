@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadLists, deleteList } from '../../store/list'
 import NewListForm from '../ListNewForm'
+import { Link } from 'react-router-dom';
 
 
 export default function Lists() {
@@ -28,7 +29,7 @@ export default function Lists() {
     <>
       <h1>Lists</h1>
       {listArr.map(list => <div key={list.id} className="deletable">
-        {list.name}
+        <Link to={`/app/list/${list.id}`}>{list.name}</Link>
         <i className="fa-solid fa-trash-can" onClick={() => handleDelete(list.id)}></i>
       </div>)}
 
