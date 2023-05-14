@@ -15,6 +15,7 @@ function App() {
       <div className="top-nav-bar">
 
         <div className="search-container">
+          <i id="menu-icon" class="fa-solid fa-bars"></i>
           <div className="search-bar">
             <input className="search-input" type="text" placeholder="Search..." ></input>
           </div>
@@ -34,7 +35,7 @@ function App() {
           <Lists />
         </div>
 
-        <div className="tasks">
+        <div className="tasks-container">
           <Tasks />
         </div>
 
