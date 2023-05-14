@@ -23,7 +23,7 @@ function Summary() {
       setCurrentList(null);
       setCurrentTasks(taskArr);
     }
-  }, [listId]);
+  }, [listId, tasks]);
 
     return (
       <div className="container">

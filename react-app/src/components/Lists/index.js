@@ -42,7 +42,7 @@ export default function Lists() {
             {isFormVisible && <NewListForm />}
           </div>
 
-          {listArr.map(list => <div key={list.id} className="list-arr" tabindex="0">
+          {listArr.map(list => <div key={list.id} className="list-arr" tabIndex="0">
             <a href={`/app/list/${list.id}`}>{list.name}</a>
             <i className="fa-solid fa-trash-can" onClick={() => handleDelete(list.id)}></i>
           </div>)}
