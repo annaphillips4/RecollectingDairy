@@ -15,7 +15,7 @@ function App() {
       <div className="top-nav-bar">
 
         <div className="search-container">
-          <i id="menu-icon" class="fa-solid fa-bars"></i>
+          <i id="menu-icon" className="fa-solid fa-bars"></i>
           <div className="search-bar">
             <input className="search-input" type="text" placeholder="Search..." ></input>
           </div>
