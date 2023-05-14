@@ -1,0 +1,35 @@
+.new-form {
+  height: 150px;
+}
+
+.new-form-input {
+  margin: 5px 0px;
+  width: 165px;
+  color: black;
+  border-radius: 3px;
+  border-color: transparent;
+  outline: none;
+}
+
+.new-form-input::placeholder {
+  color: rgb(0, 0, 0, 0.9);
+  font-size: 13px
+}
+
+.new-form>textarea {
+  width: 167px;
+}
+
+.list-button {
+  width: 172px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #009dff;
+  border-color: transparent;
+  border-radius: 5px;
+}
+
+.list-button:hover {
+  background: #0074e9;
+  cursor: pointer;
+}
