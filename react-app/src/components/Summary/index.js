@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { timeEstimate } from "../../frontend-utilities/timeEstimate";
 
 function Summary() {
   // const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function Summary() {
 
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
+  const [totalTime, setTotalTime] = useState("");
 
   useEffect(() => {
     const taskArr = Object.values(tasks);
@@ -25,6 +27,10 @@ function Summary() {
       setCurrentTasks(taskArr);
     }
   }, [listId, lists, tasks]);
+
+  useEffect(() => {
+    setTotalTime(timeEstimate(currentTasks))
+  }, [currentTasks]);
 
     return (
       <div className="container">
@@ -43,6 +49,12 @@ function Summary() {
                 </div>
               </div>
               <div className="time-estimated">
+                <div className="big-time">
+                  <h2>{totalTime}</h2>
+                </div>
+                <div className="info">
+                  <p>estimated</p>
+                </div>
 
               </div>
             </div>
