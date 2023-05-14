@@ -15,6 +15,10 @@
   font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.profile-dropdown>:first-child {
+  text-align: center;
+}
+
 #profile-button-icon {
   cursor: pointer;
   font-size: 20px;

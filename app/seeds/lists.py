@@ -7,7 +7,7 @@ def seed_lists():
     errands = List(
         name='Errands', notes="Need to plan the most efficient route to save time and make the most of the day.", owner_id=1)
     homeImpPro = List(
-        name='Home Improvement Projects', notes="Allocate specific timelines to ensure smooth progress and successful completion.", owner_id=1)
+        name='Home Improvement', notes="Allocate specific timelines to ensure smooth progress and successful completion.", owner_id=1)
     fitnessGoals = List(
         name='Fitness Goals', notes="Track progress regularly, and celebrate milestones to stay motivated.", owner_id=1)
     chores = List(

@@ -1,0 +1,98 @@
+.sidebar-main-container {
+  width: 210px;
+  height: 400px;
+}
+
+.task-container {
+  margin-left: 20px;
+  border-bottom-color: #bfd9f1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  height: 30px;
+  width: 170px;
+}
+
+.all-tasks {
+  width: 170px;
+  margin-top: 40px;
+}
+
+.all-tasks:hover {
+  background-color: rgb(0, 96, 191, 0.2);
+  transition-property: background-color;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+}
+
+.all-tasks>:first-child {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.all-tasks>:first-child:focus {
+  color: #0060bf;
+  font-weight: 500;
+}
+
+.lists-container {
+  margin-left: 20px;
+}
+
+h3 {
+  font-weight: normal;
+  color: #0060bf;
+}
+
+.new-list-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#new-list-button {
+  position: relative;
+  top: 22px;
+  left: 7px;
+  cursor: pointer;
+}
+
+.new-list-container>form {
+  position: relative;
+  top: 35px;
+  right: 53px;
+}
+
+.list-arr {
+  margin-bottom: 15px;
+  border-bottom-color: #bfd9f1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  height: 30px;
+  width: 170px;
+}
+
+.list-arr>a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.list-arr:hover {
+  background-color: rgb(0, 96, 191, 0.2);
+  transition-property: background-color;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+  color: #0060bf;
+}
+
+.list-arr:hover .fa-trash-can {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fa-trash-can {
+  display: none;
+  position: relative;
+  left: 10px;
+  top: 2px;
+}

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as listActions from "../../store/list";
+import "./ListNewForm.css"
+
 
 const NewListForm = () => {
   const dispatch = useDispatch();
@@ -9,6 +11,7 @@ const NewListForm = () => {
   const [name, setName] = useState("");
   const [notes, setNotes] = useState("");
   const [errors, setErrors] = useState([]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +24,11 @@ const NewListForm = () => {
         const data = await res.json();
         if (data & data.errors) setErrors(data.errors);
       });
-  }
+  };
+
+  const toggleFormVisibility = () => {
+    setIsFormVisible(false);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -29,21 +36,23 @@ const NewListForm = () => {
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
 
-      <h3>Enter name for list</h3>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="List Name" name="Name"></input>
+      <div className="new-form">
+        {/* <h3></h3> */}
+        <input className="new-form-input"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter name for list" name="Name"></input>
 
-      <h3>Enter notes for list</h3>
-      <textarea
-        type="text"
-        value={notes}
-        onChange={(e) => setNotes(e.target.value)}
-        placeholder="Notes" name="Notes"></textarea>
+        {/* <h3></h3> */}
+        <textarea className="new-form-input"
+          type="text"
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder="Enter notes for list" name="Notes"></textarea>
 
-      <button type="submit">Create List</button>
+        <button className="list-button" type="submit" onClick={toggleFormVisibility}>Create List</button>
+      </div>
     </form>
   )
 }
