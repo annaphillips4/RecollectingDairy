@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { timeEstimate } from "../../frontend-utilities/timeEstimate";
+import "./Summary.css"
 
 function Summary() {
   // const dispatch = useDispatch();
@@ -33,44 +34,25 @@ function Summary() {
   }, [currentTasks]);
 
     return (
-      <div className="container">
+      <div className="summary-container">
         <div className="summary-box">
           <div className="summary-heading">
-            <h2>{!currentList ? "All Tasks" : currentList.name}</h2>
+            <h3>{!currentList ? "All Tasks" : currentList.name}</h3>
           </div>
+
           <div className="info-bar">
-            <div className="task-load">
               <div className="num-tasks">
-                <div className="big-num">
-                  <h2>{currentTasks.length}</h2>
-                </div>
-                <div className="info">
-                  <p>tasks</p>
-                </div>
+                <h4>{currentTasks.length}</h4>
+                <p>tasks</p>
               </div>
+
               <div className="time-estimated">
-                <div className="big-time">
-                  <h2>{totalTime}</h2>
-                </div>
-                <div className="info">
-                  <p>estimated</p>
-                </div>
-
+                <h4>{totalTime}</h4>
+                <p>estimated</p>
               </div>
-            </div>
 
-            <div className="num-due-today">
-
-            </div>
-            <div className="num-due-tomorrow">
-
-            </div>
-            <div className="num-overdue">
-
-            </div>
-            <div className="num-completed">
-
-            </div>
+              <div className="num-completed">
+              </div>
           </div>
         </div>
       </div>
