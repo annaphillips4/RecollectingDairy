@@ -164,24 +164,33 @@ export default function Tasks() {
         </form>
       </div>
 
+      <div className="divider"></div>
+
       {tasksArr.map((taskObj) => {
         if (numListId === false || taskObj.listId === numListId) {
           return (
-            <div key={taskObj.id} className="deletable">
+            <div key={taskObj.id} className="task-arr">
               <span>{taskObj.completed && (
                 <i
                   className="fa-regular fa-square-check"
-                  onClick={() => handleEditTask(taskObj.id, false)}
-                ></i>
+                  onClick={() => handleEditTask(taskObj.id, false)}>
+                </i>
               )}
               {!taskObj.completed && (
                 <i
                   className="fa-regular fa-square"
-                  onClick={() => handleEditTask(taskObj.id, true)}
-                ></i>
+                  onClick={() => handleEditTask(taskObj.id, true)}>
+                </i>
               )}
-              {taskObj.name}</span>
-                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(taskObj.id)}></i>
+              <span className="task-name">
+                {taskObj.name}
+              </span>
+              </span>
+                <i
+                  className="fa-solid fa-trash-can"
+                  onClick={() => handleDelete(taskObj.id)}>
+                </i>
+              {/* {taskObj.dueDate} */}
             </div>
           )
         }

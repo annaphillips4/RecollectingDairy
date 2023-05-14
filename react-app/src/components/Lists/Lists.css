@@ -88,11 +88,12 @@ h3 {
 .list-arr:hover .fa-trash-can {
   display: inline-block;
   cursor: pointer;
+  color: rgb(255, 0, 0, 0.8);
 }
 
 .fa-trash-can {
   display: none;
   position: relative;
-  left: 10px;
+  left: 15px;
   top: 2px;
 }
