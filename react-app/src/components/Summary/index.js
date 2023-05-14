@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { timeEstimate } from "../../frontend-utilities/timeEstimate";
 import { splitTasks } from "../../frontend-utilities/splitTasks";
+import "./Summary.css"
 
 function Summary() {
   // const dispatch = useDispatch();
@@ -118,20 +119,25 @@ if (taskCats) {
 
 }
     return (
-      <div className="container">
+      <div className="summary-container">
         <div className="summary-box">
           <div className="summary-heading">
-            <h2>{!currentList ? "All Tasks" : currentList.name}</h2>
+            <h3>{!currentList ? "All Tasks" : currentList.name}</h3>
           </div>
+
           <div className="info-bar">
-            <div className="task-load">
-              {numTasks}
-              {totalTime ? taskTime : null}
-            </div>
-            {numToday}
-            {numTomorrow}
-            {numOver}
-            {numCompleted}
+              <div className="num-tasks">
+                <h4>{currentTasks.length}</h4>
+                <p>tasks</p>
+              </div>
+
+              <div className="time-estimated">
+                <h4>{totalTime}</h4>
+                <p>estimated</p>
+              </div>
+
+              <div className="num-completed">
+              </div>
           </div>
         </div>
       </div>
