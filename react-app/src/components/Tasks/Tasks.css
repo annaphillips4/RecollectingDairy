@@ -4,7 +4,7 @@
 }
 
 .new-task-input {
-  width: 375px;
+  width: 600px;
   height: 25px;
   padding: 0px 5px;
   border-radius: 5px;
@@ -15,7 +15,7 @@
 .new-task-button {
   margin-left: 20px;
   height: 28px;
-  width: 110px;
+  width: 150px;
   color: #fff;
   background-color: #009dff;
   border-color: transparent;
@@ -33,7 +33,7 @@
 .task-icons>.fa-solid {
   font-size: 25px;
   margin-top: 7px;
-  margin-right: 40px;
+  margin: 10px 35px;
   cursor: pointer;
   color: #009dff;
 }
