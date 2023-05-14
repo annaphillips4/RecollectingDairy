@@ -14,7 +14,7 @@ def all_tasks():
     owned_tasks = []
     assigned_tasks = []
     for task in all_tasks:
-        if task.id == user_id:
+        if task.owner_id == user_id:
             owned_tasks.append(task)
         elif task.assigned_user_id == user_id:
             assigned_tasks.append(task)
