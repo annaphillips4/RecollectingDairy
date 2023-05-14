@@ -1,13 +1,13 @@
 .deletable {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .deletable:hover .fa-trash-can {
-    display: inline-block;
-  }
+.deletable:hover .fa-trash-can {
+  display: inline-block;
+}
 
-  .fa-trash-can {
-    display: none;
-  }
+.fa-trash-can {
+  display: none;
+}

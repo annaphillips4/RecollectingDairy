@@ -1,0 +1,36 @@
+.hidden {
+  visibility: hidden;
+}
+
+.profile-dropdown {
+  z-index: 1;
+  background-color: #f1f1f1;
+  padding: 0;
+  margin: 7px 0 0 0;
+}
+
+.profile-dropdown>li {
+  list-style: none;
+  font-size: 15px;
+  font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#profile-button-icon {
+  cursor: pointer;
+  font-size: 20px;
+  /* color: rgba(255,255,255,0.7); */
+}
+
+.profile-logout-button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgba(0, 0, 0);
+  background-color: rgb(0, 96, 1910, 0.7);
+  border-color: transparent;
+  padding: 5px 11px 4px;
+}
+
+.profile-logout-button:hover {
+  background-color: rgb(0, 96, 1910);
+}
