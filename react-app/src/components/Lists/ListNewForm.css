@@ -2,6 +2,10 @@
   height: 150px;
 }
 
+.new-form-hidden {
+  display: none;
+}
+
 .new-form-input {
   margin: 5px 0px;
   width: 165px;
