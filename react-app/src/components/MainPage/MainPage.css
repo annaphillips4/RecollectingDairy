@@ -110,8 +110,8 @@
 
 .summary {
   flex: 0 0 auto;
-  width: 250px;
-  position: sticky;
+  width: calc(100% - 1040px);
+  /* position: sticky; */
   top: 50px;
   background-color: #d7e7f5;
 }
