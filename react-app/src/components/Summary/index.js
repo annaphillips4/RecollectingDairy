@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function Summary() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const lists = useSelector((state) => state.lists);
   const tasks = useSelector((state) => state.tasks);
   let { listId } = useParams()
@@ -23,7 +24,7 @@ function Summary() {
       setCurrentList(null);
       setCurrentTasks(taskArr);
     }
-  }, [listId, tasks]);
+  }, [listId, lists, tasks]);
 
     return (
       <div className="container">
