@@ -39,7 +39,7 @@ function LoginFormPage() {
 
           <div className="login-container-left">
             <div className="left-offset">
-              <Link className="logo" to="/"></Link>
+              <Link className="user-page-logo" to="/"></Link>
 
               <blockquote className="quote">
                 <p>“Sometimes I’ll start a task, and I don’t even know when it'll be done. I just hope I finish it along the way.”</p>

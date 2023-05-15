@@ -36,7 +36,7 @@ function SignupFormPage() {
 
           <div className="login-container-left">
             <div className="left-offset">
-              <Link className="logo" to="/"></Link>
+              <Link className="user-page-logo" to="/"></Link>
 
               <div className="people-row">
                 <div className="people-portrait">
