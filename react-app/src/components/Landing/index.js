@@ -15,8 +15,8 @@ const LandingPage = () => {
 
         <section className="main-content">
           <div className="clouds">
-            <span>CALL BOB AT 5PM.</span>
-            <span>PICK UP THE MILK.</span>
+            <span className="cloud-info"><p>CALL BOB AT 5PM.</p></span>
+            <span className="cloud-info"><p>PICK UP THE MILK.</p></span>
           </div>
 
           <div className="steves-container">

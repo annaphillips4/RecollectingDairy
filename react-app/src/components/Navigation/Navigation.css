@@ -11,7 +11,7 @@ body {
   z-index: 99;
   top: 0;
   left: 0;
-  min-height: 150px;
+  min-height: 100px;
   border: 1px solid transparent;
   border-color: rgba(0, 0, 0, 0.1);
   background-color: #0060bf;
@@ -23,15 +23,14 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 13px;
 }
 
 .logo {
   background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1683585510/dairy/logo3_bvkszz.png);
   background-repeat: no-repeat;
-  background-size: 200px auto;
-  width: 200px;
-  height: 100px;
+  background-size: 150px auto;
+  width: 150px;
+  height: 75px;
   display: inline-block;
   margin: 12px 0 0 2px;
   position: relative;
@@ -41,8 +40,8 @@ body {
 .navbar-right-nav {
   float: right;
   list-style: none;
-  font-size: 17px;
-  margin-top: 50px;
+  font-size: 15px;
+  margin-top: 40px;
 }
 
 .navbar-right-nav>li {
