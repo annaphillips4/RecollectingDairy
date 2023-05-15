@@ -17,8 +17,8 @@ const TaskEdit = () => {
   const [tasks, setTasks] = useState(null);
   const [currentTask, setCurrentTask] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
-  const [updatedStartDate, setUpdatedStartDate] = useState("");
-  const [updatedDueDate, setUpdatedDueDate] = useState("");
+  const [updatedStartDate, setUpdatedStartDate] = useState(new Date());
+  const [updatedDueDate, setUpdatedDueDate] = useState(new Date());
   const [updatedPriority, setUpdatedPriority] = useState("");
   const [updatedLocation, setUpdatedLocation] = useState("");
   const [updatedEstimate, setUpdatedEstimate] = useState(0);
@@ -36,18 +36,18 @@ const TaskEdit = () => {
 
   useEffect(() => {
     if (currentTask) {
-      setUpdatedName(currentTask.name)
-      setUpdatedStartDate(currentTask.startDate)
-      setUpdatedDueDate(currentTask.dueDate)
-      setUpdatedPriority(currentTask.priority)
-      setUpdatedLocation(currentTask.location)
-      setUpdatedTags(currentTask.tags)
+      if (currentTask.name) setUpdatedName(currentTask.name);
+      if (currentTask.priority) setUpdatedPriority(currentTask.priority);
+      if (currentTask.location) setUpdatedLocation(currentTask.location);
+      if (currentTask.tags) setUpdatedTags(currentTask.tags);
       if (currentTask.estimate) {
-        setInitialEstimate(currentTask.estimate)
-        setUpdatedEstimate(currentTask.estimate)
+        setInitialEstimate(currentTask.estimate);
+        setUpdatedEstimate(currentTask.estimate);
       }
+      if (currentTask.startDate) setUpdatedStartDate(new Date(currentTask.startDate));
+      if (currentTask.dueDate) setUpdatedDueDate(new Date(currentTask.dueDate));
     }
-  }, [currentTask])
+  }, [currentTask]);
 
   // useEffect(() => {
   //   console.log("updatedEstimate: ", updatedEstimate);
@@ -57,18 +57,33 @@ const TaskEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const task = {
-      id: taskId,
-      name: updatedName,
-      startDate: updatedStartDate,
-      dueDate: updatedDueDate,
-      priority: updatedPriority,
-      location: updatedLocation,
-      estimate: updatedEstimate,
-      tags: updatedTags
-    };
+    const formattedStartDate = updatedStartDate.toISOString().slice(0, 16);
+    const formattedDueDate = updatedDueDate.toISOString().slice(0, 16);
 
-    return await dispatch(taskActions.editTask(task));
+    // const task = {
+    //   ...currentTask,
+    //   name: updatedName,
+    //   start_date: formattedStartDate,
+    //   due_date: formattedDueDate,
+    //   priority: updatedPriority,
+    //   location: updatedLocation,
+    //   estimate: updatedEstimate,
+    //   tags: updatedTags
+    // };
+    const task = {
+       ...currentTask,
+       start_date: formattedStartDate,
+       due_date: formattedDueDate
+      };
+
+    if (updatedName) task.name = updatedName;
+    if (updatedPriority) task.priority = updatedPriority;
+    if (updatedLocation) task.location = updatedLocation;
+    if (updatedEstimate) task.estimate = updatedEstimate;
+    if (updatedTags) task.tags = updatedTags;
+
+
+    await dispatch(taskActions.editTask(task));
   };
 
   return (
@@ -88,18 +103,18 @@ const TaskEdit = () => {
                 <div className="start">
                   <label className="task-update-label" htmlFor="task-start-date">Start</label>
                   <input type="datetime-local" className="task-update-dates"
-                      name="task-start" value={updatedStartDate}
+                      name="task-start" value={updatedStartDate.toISOString().slice(0, 16)}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
-                      onChange={(e) => setUpdatedStartDate(e.target.value)}
+                      onChange={(e) => setUpdatedStartDate(new Date(e.target.value))}
                   />
                 </div>
 
                 <div className="due">
                   <label className="task-update-label" htmlFor="task-due-date">Due</label>
                   <input type="datetime-local" className="task-update-dates"
-                      name="task-due" value={updatedDueDate}
+                      name="task-due" value={updatedDueDate.toISOString().slice(0, 16)}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
-                      onChange={(e) => setUpdatedDueDate(e.target.value)}
+                      onChange={(e) => setUpdatedDueDate(new Date(e.target.value))}
                   />
                 </div>
 
@@ -125,7 +140,7 @@ const TaskEdit = () => {
                   <label className="task-update-label" htmlFor="task-estimate">Estimate</label>
                   <select value={ updatedEstimate } onChange={(e) => setUpdatedEstimate(Number(e.target.value))} className="task-update-estimate">
                       <option disabled={true} value='' >(select one)</option>
-                      <option value={initialEstimate}>{initialEstimate + " minutes"}</option>
+                      <option value={initialEstimate}>{initialEstimate === 0 ? "no estimate" : initialEstimate + " min (no change)"}</option>
                       <option value={5}>5 minutes</option>
                       <option value={10}>10 minutes</option>
                       <option value={15}>15 minutes</option>

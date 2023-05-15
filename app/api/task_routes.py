@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, render_template, request
 from flask_login import current_user, login_required
+from datetime import datetime
 from app.models import Task, db
 from app.forms import TaskForm
 from .auth_routes import validation_errors_to_error_messages
@@ -65,10 +66,14 @@ def edit_task(task_id):
     if not task:
         return jsonify({'error': f'Task with ID {task_id} not found.'}), 404
     elif form.validate_on_submit():
+        start_datetime_string = form.data['start_date']
+        due_datetime_string = form.data['due_date']
+        start_date = datetime.strptime(start_datetime_string, "%Y-%m-%dT%H:%M")
+        due_date = datetime.strptime(due_datetime_string, "%Y-%m-%dT%H:%M")
         task.name = form.data['name']
         task.completed = form.data['completed']
-        task.due_date = form.data['due_date']
-        task.start_date = form.data['start_date']
+        task.start_date = start_date
+        task.due_date = due_date
         task.priority = form.data['priority']
         task.repeat_period = form.data['repeat_period']
         task.repeat_type = form.data['repeat_type']
