@@ -19,17 +19,11 @@ const TaskEdit = () => {
   const [updatedName, setUpdatedName] = useState("");
   const [updatedStartDate, setUpdatedStartDate] = useState(new Date());
   const [updatedDueDate, setUpdatedDueDate] = useState(new Date());
-  const [updatedPriority, setUpdatedPriority] = useState(0);
+  const [updatedPriority, setUpdatedPriority] = useState("");
   const [updatedLocation, setUpdatedLocation] = useState("");
   const [updatedEstimate, setUpdatedEstimate] = useState(0);
   const [updatedTags, setUpdatedTags] = useState("");
   const [initialEstimate, setInitialEstimate] = useState(0);
-  const [errors, setErrors] = useState([]);
-  const [submissionAttempt, setSubmissionAttempt] = useState(false);
-
-  const minTaskNameLen = 3;
-  const minPriority = 0;
-  const maxPriority = 3;
 
 
   useEffect(() => {
@@ -60,27 +54,8 @@ const TaskEdit = () => {
   //   console.log("type of updatedEstimate: ", typeof updatedEstimate);
   // }, [updatedEstimate]);
 
-
-    // form validation
-    useEffect(() => {
-      const validationErrors = [];
-      const priority = Number(updatedPriority);
-      if (!updatedName) {
-        validationErrors.push("Name is required");
-      } else if (updatedName.length < minTaskNameLen) {
-          validationErrors.push(`Name must be at least ${minTaskNameLen} characters`);
-      }
-      if (!Number.isInteger(priority) || priority < minPriority || priority > maxPriority) {
-        validationErrors.push(`Priority must be an integer between ${minPriority} and ${maxPriority} inclusive`);
-      }
-      setErrors(validationErrors);
-    }, [updatedName, updatedPriority]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setSubmissionAttempt(true);
-    if (errors.length) return;
 
     const formattedStartDate = updatedStartDate.toISOString().slice(0, 16);
     const formattedDueDate = updatedDueDate.toISOString().slice(0, 16);
@@ -102,25 +77,18 @@ const TaskEdit = () => {
       };
 
     if (updatedName) task.name = updatedName;
-    if (updatedPriority || Number(updatedPriority) === 0) task.priority = Number(updatedPriority);
-    // task.priority = Number(updatedPriority);
+    if (updatedPriority) task.priority = updatedPriority;
     if (updatedLocation) task.location = updatedLocation;
     if (updatedEstimate) task.estimate = updatedEstimate;
     if (updatedTags) task.tags = updatedTags;
 
-    setSubmissionAttempt(false);
 
     await dispatch(taskActions.editTask(task));
   };
 
-  const errorList = <ul className="errors">
-    {submissionAttempt && errors.map((error, idx) => <li key={idx}>{error}</li>)}
-    </ul>
-
   return (
     <form className="task-edit" onSubmit={handleSubmit}>
         <div className="form-body">
-          {errorList}
             <div className="task-name">
               <label className="task-update-label">Name</label>
               <input className="task-update-name"

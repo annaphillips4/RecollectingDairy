@@ -17,7 +17,7 @@ export default function Lists() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [submissionAttempt, setSubmissionAttempt] = useState(false);
 
-  const minListNameLen = 3;
+  const minNameLen = 3;
 
 
   const listArr = Object.values(lists)
@@ -42,8 +42,8 @@ export default function Lists() {
     const validationErrors = [];
     if (!name) {
       validationErrors.push("Name is required");
-    } else if (name.length < minListNameLen) {
-        validationErrors.push(`Name must be at least ${minListNameLen} characters`);
+    } else if (name.length < minNameLen) {
+        validationErrors.push(`Name must be at least ${minNameLen} characters`);
     }
     setErrors(validationErrors);
   }, [name, notes]);
