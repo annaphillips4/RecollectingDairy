@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { timeEstimate } from "../../frontend-utilities/timeEstimate";
-import { splitTasks } from "../../frontend-utilities/splitTasks";
 import * as listActions from "../../store/list";
 import "./Summary.css"
 
@@ -25,7 +24,7 @@ function Summary() {
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
   const [totalTime, setTotalTime] = useState("");
-  const [taskCats, setTaskCats] = useState(null);
+  // const [taskCats, setTaskCats] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
 
   useEffect(() => {
@@ -41,7 +40,7 @@ function Summary() {
 
   useEffect(() => {
     setTotalTime(timeEstimate(currentTasks));
-    setTaskCats(splitTasks(currentTasks));
+    // setTaskCats(splitTasks(currentTasks));
   }, [currentTasks]);
 
   useEffect(() => {

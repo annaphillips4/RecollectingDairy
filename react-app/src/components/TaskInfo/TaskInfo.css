@@ -53,6 +53,14 @@
   color: black;
 }
 
+.search-results-box {
+  position: relative;
+  top: 41px;
+  left: -87px;
+  background-color: rgb(0, 96, 191);
+  z-index: 99;
+}
+
 #menu-icon {
   position: relative;
   font-size: 20px;
