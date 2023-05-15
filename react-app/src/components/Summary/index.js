@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { timeEstimate } from "../../frontend-utilities/timeEstimate";
+import { splitTasks } from "../../frontend-utilities/splitTasks";
 import * as listActions from "../../store/list";
 import "./Summary.css"
 
@@ -14,17 +15,17 @@ function Summary() {
     listId = parseInt(listId)
   }
 
-  // let numToday = null;
-  // let numTomorrow = null;
-  // let numOver = null;
-  // let numCompleted = null;
+  let numToday = null;
+  let numTomorrow = null;
+  let numOver = null;
+  let numCompleted = null;
   let listNameUpdate = null;
   let listCompleted = null;
 
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
   const [totalTime, setTotalTime] = useState("");
-  // const [taskCats, setTaskCats] = useState(null);
+  const [taskCats, setTaskCats] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
 
   useEffect(() => {
@@ -40,7 +41,7 @@ function Summary() {
 
   useEffect(() => {
     setTotalTime(timeEstimate(currentTasks));
-    // setTaskCats(splitTasks(currentTasks));
+    setTaskCats(splitTasks(currentTasks));
   }, [currentTasks]);
 
   useEffect(() => {
@@ -81,27 +82,19 @@ function Summary() {
     // }
   };
 
-  // const numTasks = (
-  //   <div className="num-tasks">
-  //     <div className="big-num">
-  //       <h2>{currentTasks.length}</h2>
-  //     </div>
-  //     <div className="info-type">
-  //       <p>tasks</p>
-  //     </div>
-  //   </div>
-  // );
+  const numTasks = (
+    <div className="num-tasks">
+        <h4>{currentTasks.length}</h4>
+        <p>tasks</p>
+    </div>
+  );
 
-  // const taskTime = (
-  //   <div className="time-estimated">
-  //     <div className="big-time">
-  //       <h2>{totalTime}</h2>
-  //     </div>
-  //     <div className="info-type">
-  //       <p>estimated</p>
-  //     </div>
-  //   </div>
-  // );
+  const taskTime = (
+    <div className="time-estimated">
+        <h4>{totalTime}</h4>
+        <p>estimated</p>
+    </div>
+  );
 
   // if (taskCats) {
   //   // console.log("taskCats: ", taskCats);
@@ -144,19 +137,14 @@ function Summary() {
   //   );
   // }
 
-  // if (taskCats.completed.length) {
-  //   numCompleted = (
-  //     <div className="num-completed">
-  //       <div className="big-num">
-  //         <h2>{taskCats.completed.length}</h2>
-  //       </div>
-  //       <div className="info-type">
-  //         <p>completed</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-// }
+  if (taskCats && taskCats.completed.length) {
+    numCompleted = (
+      <div className="num-completed">
+          <h4>{taskCats.completed.length}</h4>
+          <p>completed</p>
+      </div>
+    );
+  }
     return (
       <div className="summary-container">
         <div className="summary-box">
@@ -166,17 +154,13 @@ function Summary() {
           </div>
 
           <div className="info-bar">
-              <div className="num-tasks">
-                <h4>{currentTasks.length}</h4>
-                <p>tasks</p>
-              </div>
 
-              {listCompleted}
+              {numTasks}
 
-              <div className="time-estimated">
-                <h4>{totalTime}</h4>
-                <p>estimated</p>
-              </div>
+              {numCompleted}
+
+              {totalTime ? taskTime : null}
+
           </div>
         </div>
       </div>
