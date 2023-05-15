@@ -50,7 +50,7 @@ function TaskInfo() {
                 return null;
               } else if (task.name.toLowerCase().includes(query.toLowerCase())) {
                 return tasks;
-              }
+              } else return null;
             }).map((post, idx) => (
               <div className="search-results-box" key={idx}>
                 <div className="search-card" onMouseDown={() => edit(post.listId, post.id)}>
