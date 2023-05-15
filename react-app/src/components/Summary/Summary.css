@@ -1,0 +1,79 @@
+.summary-container {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.summary-heading>h3 {
+  font-size: 20px;
+  font-weight: 100;
+  color: black;
+}
+
+.update-list-button {
+  margin-left: 10px;
+  width: 50px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #009dff;
+  border-color: transparent;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+}
+
+.update-list-button:hover {
+  background: #0074e9;
+  cursor: pointer;
+}
+
+.info-bar {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.info-bar>div {
+  margin-right: 5px;
+}
+
+.num-tasks {
+  height: 50px;
+  width: 70px;
+  background-color: rgba(125, 192, 252, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.info-bar>div>h4 {
+  color: #0060bf;
+  font-weight: bold;
+}
+
+.info-bar>div>p {
+  font-size: 14px;
+}
+
+.info-bar>div>h4,
+.info-bar>div>p {
+  /* align-items: center; */
+  margin: auto;
+  padding-left: 10px;
+}
+
+.time-estimated {
+  height: 50px;
+  width: 100px;
+  background-color: rgba(125, 192, 252, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.num-completed {
+  height: 50px;
+  width: 100px;
+  background-color: rgba(125, 192, 252, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+}

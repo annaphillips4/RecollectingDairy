@@ -19,17 +19,17 @@
 
 .search-bar {
   position: relative;
-  left: 220px;
+  left: 191px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: auto 0px;
 }
 
 .search-bar>input {
   height: 25px;
-  width: 300px;
+  width: 250px;
   border: none;
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   padding-left: 10px;
   padding-top: 3px;
   transition-property: background-color;
@@ -37,8 +37,12 @@
   -webkit-transition-duration: .3s;
 }
 
-::placeholder {
-  color: #fff;
+.search-bar>input:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 15px;
 }
 
@@ -49,9 +53,18 @@
   color: black;
 }
 
+#menu-icon {
+  position: relative;
+  font-size: 20px;
+  top: 9px;
+  left: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
 #search-icon {
   position: relative;
-  left: 200px;
+  left: 170px;
   color: rgba(255, 255, 255, 0.7);
   margin: auto 0px;
 }
@@ -71,21 +84,33 @@
 
 .sidebar {
   flex: 0 0 auto;
-  width: 250px;
+  width: 210px;
   position: sticky;
-  background-color: #f1f1f1;
+  background-color: #d7e7f5;
 }
 
-.tasks {
-  flex: 1;
+.sidebar-logo {
+  background-image: url(https://res.cloudinary.com/dcbexnl8j/image/upload/v1684038816/dairy/sprites_egq1sv.png);
+  background-repeat: no-repeat;
+  background-size: 642px auto;
+  background-position: 0 -412px;
+  width: 151px;
+  height: 71px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.tasks-container {
+  width: 820px;
   overflow-y: auto;
   padding: 20px;
 }
 
 .summary {
   flex: 0 0 auto;
-  width: 250px;
-  position: sticky;
+  width: calc(100% - 1060px);
   top: 50px;
-  background-color: #f1f1f1;
+  background-color: #d7e7f5;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadTasks, postTask, editTask, deleteTask } from "../../store/task";
 import { useParams } from "react-router-dom";
+import "./Tasks.css"
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -67,6 +68,7 @@ export default function Tasks() {
     const matches = input.matchAll(tagPattern);
     const payload = {
       owner_id: ownerId,
+      list_id: listId
     };
 
     const nameMatch = /^([^!@^~#*=+]+)/.exec(input);
@@ -113,64 +115,83 @@ export default function Tasks() {
 
   return (
     <>
-      <h1>Tasks</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button type="submit">Add Task</button>
-        <div>
-          <i
-            className="fa-solid fa-calendar-check"
-            onClick={() => handleSmartAdd('^')}
-          ></i>
-          <i
-            className="fa-solid fa-calendar-day"
-            onClick={() => handleSmartAdd('~')}
-          ></i>
-          <i
-            className="fa-solid fa-exclamation"
-            onClick={() => handleSmartAdd('!')}
-          ></i>
-          <i
-            className="fa-solid fa-rectangle-list"
-            onClick={() => handleSmartAdd('#')}
-          ></i>
-          <i
-            className="fa-solid fa-clock-rotate-left"
-            onClick={() => handleSmartAdd('*')}
-          ></i>
-          <i
-            className="fa-solid fa-location-dot"
-            onClick={() => handleSmartAdd('@')}
-          ></i>
-          <i
-            className="fa-solid fa-stopwatch"
-            onClick={() => handleSmartAdd('=')}
-          ></i>
-          {/* <i className="fa-solid fa-user"></i> */}
-        </div>
-      </form>
+      <div className="new-task-container">
+        <form onSubmit={handleSubmit}>
+          <input className="new-task-input"
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Add a task..."
+          />
+          <button className="new-task-button" type="submit">Add Task</button>
+          <div className="task-icons">
+            <i
+              className="fa-solid fa-calendar-check"
+              onClick={() => handleSmartAdd('^')}
+              title="Due Date"
+            ></i>
+            <i
+              className="fa-solid fa-calendar-day"
+              onClick={() => handleSmartAdd('~')}
+              title="Start Date"
+            ></i>
+            <i
+              className="fa-solid fa-exclamation"
+              onClick={() => handleSmartAdd('!')}
+              title="Priority"
+            ></i>
+            <i
+              className="fa-solid fa-rectangle-list"
+              onClick={() => handleSmartAdd('#')}
+              title="Repeat Period"
+            ></i>
+            <i
+              className="fa-solid fa-clock-rotate-left"
+              onClick={() => handleSmartAdd('*')}
+              title="Repeat Type"
+            ></i>
+            <i
+              className="fa-solid fa-location-dot"
+              onClick={() => handleSmartAdd('@')}
+              title="Location"
+            ></i>
+            <i
+              className="fa-solid fa-stopwatch"
+              onClick={() => handleSmartAdd('=')}
+              title="Estimate"
+            ></i>
+            {/* <i className="fa-solid fa-user"></i> */}
+          </div>
+        </form>
+      </div>
+
+      <div className="divider"></div>
+
       {tasksArr.map((taskObj) => {
         if (numListId === false || taskObj.listId === numListId) {
           return (
-            <div key={taskObj.id} className="deletable">
+            <div key={taskObj.id} className="task-arr">
               <span>{taskObj.completed && (
                 <i
                   className="fa-regular fa-square-check"
-                  onClick={() => handleEditTask(taskObj.id, false)}
-                ></i>
+                  onClick={() => handleEditTask(taskObj.id, false)}>
+                </i>
               )}
               {!taskObj.completed && (
                 <i
                   className="fa-regular fa-square"
-                  onClick={() => handleEditTask(taskObj.id, true)}
-                ></i>
+                  onClick={() => handleEditTask(taskObj.id, true)}>
+                </i>
               )}
-              {taskObj.name}</span>
-                <i className="fa-solid fa-trash-can" onClick={() => handleDelete(taskObj.id)}></i>
+              <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
+                {taskObj.name}
+              </a>
+              </span>
+                <i
+                  className="fa-solid fa-trash-can"
+                  onClick={() => handleDelete(taskObj.id)}>
+                </i>
+              {/* {taskObj.dueDate} */}
             </div>
           )
         }

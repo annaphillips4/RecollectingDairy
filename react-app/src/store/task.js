@@ -24,7 +24,6 @@ const removeTask = (taskId) => ({
 });
 
 export const loadTasks = () => async dispatch => {
-    console.log("in loadTasks")
     let res = await fetch('/api/tasks')
     if (res.ok){
         res = await res.json()
@@ -33,7 +32,7 @@ export const loadTasks = () => async dispatch => {
 };
 
 export const postTask = (payload) => async dispatch => {
-    console.log("in postTasks")
+
     const res = await fetch('/api/tasks/', {
         method: "POST",
         headers: { "Content-Type": "application/json"},
@@ -83,7 +82,7 @@ export const editTask = (task) => async (dispatch) => {
 };
 
 export const deleteTask = (taskId) => async dispatch => {
-    const response = await fetch(`api/tasks/${taskId}`, {
+    const response = await fetch(`/api/tasks/${taskId}`, {
         method: 'DELETE'
     });
 

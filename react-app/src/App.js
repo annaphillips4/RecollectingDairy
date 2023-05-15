@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import LandingPage from "./components/Landing";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import Main from "./components/MainPage";
-import LandingPage from "./components/Landing";
+import TaskInfo from "./components/TaskInfo";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/app/list/:listId">
             <Main />
+          </Route>
+          <Route exact path="/app/list/:listId/:taskId">
+            <TaskInfo />
           </Route>
         </Switch>
       )}

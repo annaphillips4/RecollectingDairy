@@ -21,7 +21,7 @@ function Navigation({ isLoaded }) {
 	return (
 		<nav className="navbar">
 			<div className="container">
-				<Link className="logo" to="/"></Link>
+				<Link className="landing-logo" to="/"></Link>
 
 				<ul className="navbar-right-nav">
 					{login}
