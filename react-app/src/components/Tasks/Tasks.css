@@ -79,6 +79,8 @@
 .task-name {
   font-size: 15px;
   margin-left: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .fa-trash-can {

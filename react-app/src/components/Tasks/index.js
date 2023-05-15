@@ -183,9 +183,9 @@ export default function Tasks() {
                   onClick={() => handleEditTask(taskObj.id, true)}>
                 </i>
               )}
-              <span className="task-name">
+              <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
                 {taskObj.name}
-              </span>
+              </a>
               </span>
                 <i
                   className="fa-solid fa-trash-can"

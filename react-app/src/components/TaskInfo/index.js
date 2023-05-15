@@ -1,14 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ProfileButton from "../Navigation/ProfileButton"
 import Lists from "../Lists";
 import Tasks from "../Tasks";
-import ProfileButton from "../Navigation/ProfileButton"
-import Summary from "../Summary"
-import TaskEdit from "../TaskEdit/Robert_index";
-import "./MainPage.css"
+import TaskEdit from "../TaskEdit";
+// import Summary from "../Summary"
+import "./TaskInfo.css"
 
-function App() {
+function TaskInfo() {
   const sessionUser = useSelector((state) => state.session.user);
 
   return (
@@ -31,7 +31,7 @@ function App() {
       <div className="content-container">
         <div className="sidebar">
           <div className="sidebar-logo">
-            <Link to="/app"></Link>
+            <a href="/app"></a>
           </div>
           <Lists />
         </div>
@@ -40,12 +40,12 @@ function App() {
           <Tasks />
         </div>
 
-        <div className="summary">
-          <Summary />
+        <div className="task-info">
+          <TaskEdit />
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default TaskInfo;
