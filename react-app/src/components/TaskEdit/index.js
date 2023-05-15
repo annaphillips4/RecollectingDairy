@@ -60,7 +60,7 @@ const TaskEdit = () => {
     <form className="task-edit" onSubmit={handleSubmit}>
         <div className="form-body">
             <div className="task-name">
-              <label>Name</label>
+              <label className="task-update-label">Name</label>
               <input className="task-update-name"
                   type='text'
                   value={updatedName}
@@ -71,8 +71,8 @@ const TaskEdit = () => {
 
             <div className="task-fields">
                 <div className="start">
-                  <label htmlFor="task-start-date">Start</label>
-                  <input type="datetime-local"
+                  <label className="task-update-label" htmlFor="task-start-date">Start</label>
+                  <input type="datetime-local" className="task-update-dates"
                       name="task-start" value={updatedStartDate}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
                       onChange={(e) => setUpdatedStartDate(e.target.value)}
@@ -80,8 +80,8 @@ const TaskEdit = () => {
                 </div>
 
                 <div className="due">
-                  <label htmlFor="task-due-date">Due</label>
-                  <input type="datetime-local"
+                  <label className="task-update-label" htmlFor="task-due-date">Due</label>
+                  <input type="datetime-local" className="task-update-dates"
                       name="task-due" value={updatedDueDate}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
                       onChange={(e) => setUpdatedDueDate(e.target.value)}
@@ -89,8 +89,8 @@ const TaskEdit = () => {
                 </div>
 
                 <div className="priority">
-                  <label>Priority</label>
-                  <input
+                  <label className="task-update-label">Priority</label>
+                  <input className="task-update-prio"
                       type='text'
                       value={updatedPriority}
                       onChange={(e) => setUpdatedPriority(e.target.value)}
@@ -98,7 +98,7 @@ const TaskEdit = () => {
                 </div>
 
                 <div className="location">
-                  <label>Location</label>
+                  <label className="task-update-label">Location</label>
                   <input className="task-update-input"
                       type='text'
                       value={updatedLocation}
@@ -107,8 +107,8 @@ const TaskEdit = () => {
                 </div>
 
                 <div className="estimate">
-                  <label htmlFor="task-estimate">Estimate</label>
-                  <select value={updatedEstimate === 0 ? "none" : updatedEstimate + " minutes"} onChange={(e) => setUpdatedEstimate(e.target.value)}>
+                  <label className="task-update-label" htmlFor="task-estimate">Estimate</label>
+                  <select value={updatedEstimate === 0 ? "none" : updatedEstimate + " minutes"} onChange={(e) => setUpdatedEstimate(e.target.value)} className="task-update-estimate">
                       <option disabled={true} value='' >(select one)</option>
                       <option value={5}>5 minutes</option>
                       <option value={10}>10 minutes</option>
@@ -121,7 +121,7 @@ const TaskEdit = () => {
                 </div>
 
                 <div className="tags">
-                  <label>Tags</label>
+                  <label className="task-update-label">Tags</label>
                   <input className="task-update-input"
                       type='text'
                       value={updatedTags}
@@ -129,7 +129,7 @@ const TaskEdit = () => {
                   />
                 </div>
 
-                <button className="update-list-button" type="submit">Update Task</button>
+                <button className="update-task-button" type="submit">Update Task</button>
             </div>
 
         </div>
