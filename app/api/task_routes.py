@@ -68,12 +68,12 @@ def edit_task(task_id):
     elif form.validate_on_submit():
         start_datetime_string = form.data['start_date']
         due_datetime_string = form.data['due_date']
-        start_date = datetime.strptime(start_datetime_string, "%Y-%m-%dT%H:%M")
-        due_date = datetime.strptime(due_datetime_string, "%Y-%m-%dT%H:%M")
+        # start_date = datetime.strptime(start_datetime_string, "%Y-%m-%dT%H:%M")
+        # due_date = datetime.strptime(due_datetime_string, "%Y-%m-%dT%H:%M")
         task.name = form.data['name']
         task.completed = form.data['completed']
-        task.start_date = start_date
-        task.due_date = due_date
+        # task.start_date = start_date
+        # task.due_date = due_date
         task.priority = form.data['priority']
         task.repeat_period = form.data['repeat_period']
         task.repeat_type = form.data['repeat_type']
@@ -81,6 +81,10 @@ def edit_task(task_id):
         task.estimate = form.data['estimate']
         task.tags = form.data['tags']
         task.notes = form.data['notes']
+        if start_datetime_string:
+            task.start_date = datetime.strptime(start_datetime_string, "%Y-%m-%dT%H:%M")
+        if due_datetime_string:
+            task.due_date = datetime.strptime(due_datetime_string, "%Y-%m-%dT%H:%M")
         db.session.commit()
         return task.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
