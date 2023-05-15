@@ -7,13 +7,14 @@ import "./TaskEdit.css";
 const TaskEdit = () => {
   const dispatch = useDispatch();
 
-  const tasks = useSelector((state) => state.tasks);
+  const loadTasks = useSelector((state) => state.tasks);
 
   let { taskId } = useParams()
   if (taskId) {
     taskId = parseInt(taskId)
   }
 
+  const [tasks, setTasks] = useState(null);
   const [currentTask, setCurrentTask] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
   const [updatedStartDate, setUpdatedStartDate] = useState("");
@@ -23,8 +24,13 @@ const TaskEdit = () => {
   const [updatedEstimate, setUpdatedEstimate] = useState("");
   const [updatedTags, setUpdatedTags] = useState("");
 
+
   useEffect(() => {
-    if (tasks) setCurrentTask(tasks[taskId]);
+    setTasks(loadTasks);
+  }, [loadTasks]);
+
+  useEffect(() => {
+    if (tasks && taskId) setCurrentTask(tasks[taskId]);
   }, [tasks, taskId]);
 
   useEffect(() => {
@@ -38,6 +44,11 @@ const TaskEdit = () => {
       setUpdatedTags(currentTask.tags)
     }
   }, [currentTask])
+
+  useEffect(() => {
+    console.log("updatedEstimate: ", updatedEstimate);
+    console.log("type of updatedEstimate: ", typeof updatedEstimate);
+  }, [updatedEstimate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -108,7 +119,7 @@ const TaskEdit = () => {
 
                 <div className="estimate">
                   <label className="task-update-label" htmlFor="task-estimate">Estimate</label>
-                  <select value={updatedEstimate === 0 ? "none" : updatedEstimate + " minutes"} onChange={(e) => setUpdatedEstimate(e.target.value)} className="task-update-estimate">
+                  <select value={ updatedEstimate } onChange={(e) => setUpdatedEstimate(Number(e.target.value))} className="task-update-estimate">
                       <option disabled={true} value='' >(select one)</option>
                       <option value={5}>5 minutes</option>
                       <option value={10}>10 minutes</option>
