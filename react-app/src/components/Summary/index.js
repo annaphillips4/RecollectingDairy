@@ -42,15 +42,15 @@ function Summary() {
   }, [currentTasks]);
 
   const numTasks = (
-  <div className="num-tasks">
-    <div className="big-num">
-      <h2>{currentTasks.length}</h2>
+    <div className="num-tasks">
+      <div className="big-num">
+        <h2>{currentTasks.length}</h2>
+      </div>
+      <div className="info-type">
+        <p>tasks</p>
+      </div>
     </div>
-    <div className="info-type">
-      <p>tasks</p>
-    </div>
-  </div>
-);
+  );
 
 const taskTime = (
   <div className="time-estimated">

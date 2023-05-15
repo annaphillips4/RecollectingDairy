@@ -68,6 +68,7 @@ export default function Tasks() {
     const matches = input.matchAll(tagPattern);
     const payload = {
       owner_id: ownerId,
+      list_id: listId
     };
 
     const nameMatch = /^([^!@^~#*=+]+)/.exec(input);
