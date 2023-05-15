@@ -57,20 +57,7 @@ function Summary() {
     )
   }
 
-  const updateSubmit = async (e) => {
-    e.preventDefault();
 
-    const list = { name: updatedName, id: listId };
-
-    return await dispatch(listActions.editList(list));
-    // try {
-    //   await dispatch(listActions.editList(list));
-    // } catch (res) {
-    //   const data = await res.json();
-    //   return data;
-    //   // if (data && data.errors) setErrors(data.errors);
-    // }
-  };
 
   const numTasks = (
     <div className="num-tasks">
@@ -135,12 +122,23 @@ function Summary() {
       </div>
     );
   }
+
+  const updateSubmit = async (e) => {
+    e.preventDefault();
+
+    const list = { name: updatedName, id: listId };
+
+    return await dispatch(listActions.editList(list));
+  };
+
+  const updateListButton = <button className="update-list-button" type="submit" onClick={updateSubmit}>Update</button>
+
     return (
       <div className="summary-container">
         <div className="summary-box">
           <div className="summary-heading">
             {!currentList ? "All Tasks" : listNameUpdate}
-            <button className="update-list-button" type="submit" onClick={updateSubmit}>Update</button>
+            {currentList ? updateListButton : null}
           </div>
 
           <div className="info-bar">
