@@ -20,6 +20,7 @@ function Summary() {
   // let numOver = null;
   // let numCompleted = null;
   let listNameUpdate = null;
+  let listCompleted = null;
 
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
@@ -54,6 +55,15 @@ function Summary() {
         value={updatedName}
         onChange={(e) => setUpdatedName(e.target.value)}
         name="Name"></input>
+    )
+  }
+
+  if (currentList) {
+    listCompleted = (
+      <div className="num-completed">
+        <h4>{currentList.numCompleted}</h4>
+        <p>completed</p>
+      </div>
     )
   }
 
@@ -162,12 +172,11 @@ function Summary() {
                 <p>tasks</p>
               </div>
 
+              {listCompleted}
+
               <div className="time-estimated">
                 <h4>{totalTime}</h4>
                 <p>estimated</p>
-              </div>
-
-              <div className="num-completed">
               </div>
           </div>
         </div>

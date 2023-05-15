@@ -69,3 +69,11 @@
   border-radius: 5px;
   padding-top: 10px;
 }
+
+.num-completed {
+  height: 50px;
+  width: 100px;
+  background-color: rgba(125, 192, 252, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+}
