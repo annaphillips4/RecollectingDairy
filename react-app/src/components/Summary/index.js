@@ -15,12 +15,11 @@ function Summary() {
     listId = parseInt(listId)
   }
 
-  let numToday = null;
-  let numTomorrow = null;
-  let numOver = null;
+  // let numToday = null;
+  // let numTomorrow = null;
+  // let numOver = null;
   let numCompleted = null;
   let listNameUpdate = null;
-  let listCompleted = null;
 
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
@@ -55,15 +54,6 @@ function Summary() {
         value={updatedName}
         onChange={(e) => setUpdatedName(e.target.value)}
         name="Name"></input>
-    )
-  }
-
-  if (currentList) {
-    listCompleted = (
-      <div className="num-completed">
-        <h4>{currentList.numCompleted}</h4>
-        <p>completed</p>
-      </div>
     )
   }
 
