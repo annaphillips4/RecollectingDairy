@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/app">
             <Main />
           </Route>
-          <Route exact path="/app/list/:listId">
+          <Route path="/app/list/:listId">
             <Main />
           </Route>
           <Route exact path="/app/list/:listId/:taskId">
