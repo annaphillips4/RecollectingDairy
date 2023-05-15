@@ -21,8 +21,9 @@ const TaskEdit = () => {
   const [updatedDueDate, setUpdatedDueDate] = useState("");
   const [updatedPriority, setUpdatedPriority] = useState("");
   const [updatedLocation, setUpdatedLocation] = useState("");
-  const [updatedEstimate, setUpdatedEstimate] = useState("");
+  const [updatedEstimate, setUpdatedEstimate] = useState(0);
   const [updatedTags, setUpdatedTags] = useState("");
+  const [initialEstimate, setInitialEstimate] = useState(0);
 
 
   useEffect(() => {
@@ -40,15 +41,18 @@ const TaskEdit = () => {
       setUpdatedDueDate(currentTask.dueDate)
       setUpdatedPriority(currentTask.priority)
       setUpdatedLocation(currentTask.location)
-      setUpdatedEstimate(currentTask.estimate)
       setUpdatedTags(currentTask.tags)
+      if (currentTask.estimate) {
+        setInitialEstimate(currentTask.estimate)
+        setUpdatedEstimate(currentTask.estimate)
+      }
     }
   }, [currentTask])
 
-  useEffect(() => {
-    console.log("updatedEstimate: ", updatedEstimate);
-    console.log("type of updatedEstimate: ", typeof updatedEstimate);
-  }, [updatedEstimate]);
+  // useEffect(() => {
+  //   console.log("updatedEstimate: ", updatedEstimate);
+  //   console.log("type of updatedEstimate: ", typeof updatedEstimate);
+  // }, [updatedEstimate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -121,6 +125,7 @@ const TaskEdit = () => {
                   <label className="task-update-label" htmlFor="task-estimate">Estimate</label>
                   <select value={ updatedEstimate } onChange={(e) => setUpdatedEstimate(Number(e.target.value))} className="task-update-estimate">
                       <option disabled={true} value='' >(select one)</option>
+                      <option value={initialEstimate}>{initialEstimate + " minutes"}</option>
                       <option value={5}>5 minutes</option>
                       <option value={10}>10 minutes</option>
                       <option value={15}>15 minutes</option>
