@@ -1,6 +1,8 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
+import * as taskActions from "../../store/task";
+import "./TaskEdit.css";
 
 const TaskEdit = () => {
   const dispatch = useDispatch();
@@ -37,14 +39,29 @@ const TaskEdit = () => {
     }
   }, [currentTask])
 
-  console.log(currentTask)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const task = {
+      id: taskId,
+      name: updatedName,
+      startDate: updatedStartDate,
+      dueDate: updatedDueDate,
+      priority: updatedPriority,
+      location: updatedLocation,
+      estimate: updatedEstimate,
+      tags: updatedTags
+    };
+
+    return await dispatch(taskActions.editTask(task));
+  };
 
   return (
-    <form className="task-edit" >
+    <form className="task-edit" onSubmit={handleSubmit}>
         <div className="form-body">
             <div className="task-name">
               <label>Name</label>
-              <input
+              <input className="task-update-name"
                   type='text'
                   value={updatedName}
                   placeholder='Task Name'
@@ -55,7 +72,7 @@ const TaskEdit = () => {
             <div className="task-fields">
                 <div className="start">
                   <label htmlFor="task-start-date">Start</label>
-                  <input type="datetime-local" id="task-start-date"
+                  <input type="datetime-local"
                       name="task-start" value={updatedStartDate}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
                       onChange={(e) => setUpdatedStartDate(e.target.value)}
@@ -64,7 +81,7 @@ const TaskEdit = () => {
 
                 <div className="due">
                   <label htmlFor="task-due-date">Due</label>
-                  <input type="datetime-local" id="task-due-date"
+                  <input type="datetime-local"
                       name="task-due" value={updatedDueDate}
                       min="1970-06-07T00:00" max="2100-06-14T00:00"
                       onChange={(e) => setUpdatedDueDate(e.target.value)}
@@ -82,7 +99,7 @@ const TaskEdit = () => {
 
                 <div className="location">
                   <label>Location</label>
-                  <input
+                  <input className="task-update-input"
                       type='text'
                       value={updatedLocation}
                       onChange={(e) => setUpdatedLocation(e.target.value)}
@@ -105,12 +122,14 @@ const TaskEdit = () => {
 
                 <div className="tags">
                   <label>Tags</label>
-                  <input
+                  <input className="task-update-input"
                       type='text'
                       value={updatedTags}
                       onChange={(e) => setUpdatedTags(e.target.value)}
                   />
                 </div>
+
+                <button className="update-list-button" type="submit">Update Task</button>
             </div>
 
         </div>
