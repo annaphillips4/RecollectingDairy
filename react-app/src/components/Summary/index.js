@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { timeEstimate } from "../../frontend-utilities/timeEstimate";
 import { splitTasks } from "../../frontend-utilities/splitTasks";
+import * as listActions from "../../store/list";
 import "./Summary.css"
 
 function Summary() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const lists = useSelector((state) => state.lists);
   const tasks = useSelector((state) => state.tasks);
   let { listId } = useParams()
@@ -15,15 +15,17 @@ function Summary() {
     listId = parseInt(listId)
   }
 
-  let numToday = null;
-  let numTomorrow = null;
-  let numOver = null;
-  let numCompleted = null;
+  // let numToday = null;
+  // let numTomorrow = null;
+  // let numOver = null;
+  // let numCompleted = null;
+  let listNameUpdate = null;
 
   const [currentList, setCurrentList] = useState(null);
   const [currentTasks, setCurrentTasks] = useState([]);
   const [totalTime, setTotalTime] = useState("");
   const [taskCats, setTaskCats] = useState(null);
+  const [updatedName, setUpdatedName] = useState("");
 
   useEffect(() => {
     const taskArr = Object.values(tasks);
@@ -41,88 +43,117 @@ function Summary() {
     setTaskCats(splitTasks(currentTasks));
   }, [currentTasks]);
 
-  const numTasks = (
-    <div className="num-tasks">
-      <div className="big-num">
-        <h2>{currentTasks.length}</h2>
-      </div>
-      <div className="info-type">
-        <p>tasks</p>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    if (currentList) setUpdatedName(currentList.name)
+  }, [currentList])
 
-const taskTime = (
-  <div className="time-estimated">
-    <div className="big-time">
-      <h2>{totalTime}</h2>
-    </div>
-    <div className="info-type">
-      <p>estimated</p>
-    </div>
-  </div>
-);
-
-if (taskCats) {
-  // console.log("taskCats: ", taskCats);
-  if (taskCats.dueToday.length) {
-    numToday = (
-      <div className="num-due-today">
-        <div className="big-num">
-          <h2>{taskCats.dueToday.length}</h2>
-        </div>
-        <div className="info-type">
-          <p>due today</p>
-        </div>
-      </div>
-    );
+  if (currentList) {
+    listNameUpdate = (
+      <input className="new-form-input"
+        type="text"
+        value={updatedName}
+        onChange={(e) => setUpdatedName(e.target.value)}
+        name="Name"></input>
+    )
   }
 
-  if (taskCats.dueTomorrow.length) {
-    numTomorrow = (
-      <div className="num-due-tomorrow">
-        <div className="big-num">
-          <h2>{taskCats.dueTomorrow.length}</h2>
-        </div>
-        <div className="info-type">
-          <p>due tomorrow</p>
-        </div>
-      </div>
-    );
-  }
+  const updateSubmit = async (e) => {
+    e.preventDefault();
 
-  if (taskCats.overdue.length) {
-    numOver = (
-      <div className="num-overdue">
-        <div className="big-num">
-          <h2>{taskCats.overdue.length}</h2>
-        </div>
-        <div className="info-type">
-          <p>overdue</p>
-        </div>
-      </div>
-    );
-  }
+    const list = { name: updatedName, id: listId };
 
-  if (taskCats.completed.length) {
-    numCompleted = (
-      <div className="num-completed">
-        <div className="big-num">
-          <h2>{taskCats.completed.length}</h2>
-        </div>
-        <div className="info-type">
-          <p>completed</p>
-        </div>
-      </div>
-    );
-  }
+    return await dispatch(listActions.editList(list));
+    // try {
+    //   await dispatch(listActions.editList(list));
+    // } catch (res) {
+    //   const data = await res.json();
+    //   return data;
+    //   // if (data && data.errors) setErrors(data.errors);
+    // }
+  };
 
-}
+  // const numTasks = (
+  //   <div className="num-tasks">
+  //     <div className="big-num">
+  //       <h2>{currentTasks.length}</h2>
+  //     </div>
+  //     <div className="info-type">
+  //       <p>tasks</p>
+  //     </div>
+  //   </div>
+  // );
+
+  // const taskTime = (
+  //   <div className="time-estimated">
+  //     <div className="big-time">
+  //       <h2>{totalTime}</h2>
+  //     </div>
+  //     <div className="info-type">
+  //       <p>estimated</p>
+  //     </div>
+  //   </div>
+  // );
+
+  // if (taskCats) {
+  //   // console.log("taskCats: ", taskCats);
+  //   if (taskCats.dueToday.length) {
+  //     numToday = (
+  //       <div className="num-due-today">
+  //         <div className="big-num">
+  //           <h2>{taskCats.dueToday.length}</h2>
+  //         </div>
+  //         <div className="info-type">
+  //           <p>due today</p>
+  //         </div>
+  //       </div>
+  //     );
+  // }
+
+  // if (taskCats.dueTomorrow.length) {
+  //   numTomorrow = (
+  //     <div className="num-due-tomorrow">
+  //       <div className="big-num">
+  //         <h2>{taskCats.dueTomorrow.length}</h2>
+  //       </div>
+  //       <div className="info-type">
+  //         <p>due tomorrow</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // if (taskCats.overdue.length) {
+  //   numOver = (
+  //     <div className="num-overdue">
+  //       <div className="big-num">
+  //         <h2>{taskCats.overdue.length}</h2>
+  //       </div>
+  //       <div className="info-type">
+  //         <p>overdue</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  // if (taskCats.completed.length) {
+  //   numCompleted = (
+  //     <div className="num-completed">
+  //       <div className="big-num">
+  //         <h2>{taskCats.completed.length}</h2>
+  //       </div>
+  //       <div className="info-type">
+  //         <p>completed</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+// }
     return (
       <div className="summary-container">
         <div className="summary-box">
           <div className="summary-heading">
-            <h3>{!currentList ? "All Tasks" : currentList.name}</h3>
+            {!currentList ? "All Tasks" : listNameUpdate}
+            <button className="update-list-button" type="submit" onClick={updateSubmit}>Update</button>
           </div>
 
           <div className="info-bar">
