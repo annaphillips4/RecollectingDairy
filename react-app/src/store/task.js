@@ -83,7 +83,7 @@ export const editTask = (task) => async (dispatch) => {
 };
 
 export const deleteTask = (taskId) => async dispatch => {
-    const response = await fetch(`api/tasks/${taskId}`, {
+    const response = await fetch(`/api/tasks/${taskId}`, {
         method: 'DELETE'
     });
 
