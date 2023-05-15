@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import ProfileButton from "../Navigation/ProfileButton"
@@ -16,10 +16,6 @@ function TaskInfo() {
   let taskArr = Object.values(tasks);
 
   const [query, setQuery] = useState("")
-
-  // useEffect(() => {
-  //   setQuery("");
-  // }, [query]);
 
   const show = () => {
     document.querySelector(".search-results").classList.remove("hidden");
@@ -73,7 +69,7 @@ function TaskInfo() {
       <div className="content-container">
         <div className="sidebar">
           <div className="sidebar-logo">
-            <Link href="/app"></Link>
+            <Link to={"/app"}></Link>
           </div>
           <Lists />
         </div>

@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LandingPage from "./components/Landing";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
-import Main from "./components/MainPage";
+import Main from "./components/MainPage"
 import TaskInfo from "./components/TaskInfo";
 import { authenticate } from "./store/session";
 

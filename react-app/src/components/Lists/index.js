@@ -53,7 +53,7 @@ export default function Lists() {
       <div className="sidebar-main-container">
         <div className="task-container">
           <div className="all-tasks">
-            <Link to={`/app`}>All Tasks</Link>
+            <Link to={"/app"}>All Tasks</Link>
           </div>
         </div>
 
