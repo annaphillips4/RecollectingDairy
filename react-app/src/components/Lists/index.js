@@ -15,10 +15,6 @@ export default function Lists() {
   const [notes, setNotes] = useState("");
   const [errors, setErrors] = useState([]);
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const [submissionAttempt, setSubmissionAttempt] = useState(false);
-
-  const minNameLen = 3;
-
 
   const listArr = Object.values(lists)
 
@@ -30,6 +26,7 @@ export default function Lists() {
     setIsFormVisible(!isFormVisible);
     setName('')
     setNotes('')
+    setErrors([])
   };
 
   const handleDelete = async (listId) => {
@@ -37,26 +34,10 @@ export default function Lists() {
     await dispatch(loadLists());
   }
 
-  // form validation
-  useEffect(() => {
-    const validationErrors = [];
-    if (!name) {
-      validationErrors.push("Name is required");
-    } else if (name.length < minNameLen) {
-        validationErrors.push(`Name must be at least ${minNameLen} characters`);
-    }
-    setErrors(validationErrors);
-  }, [name, notes]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setSubmissionAttempt(true);
-    if (errors.length) return;
-
     const list = { name, notes, owner_id: currentUser.id };
-
-    setSubmissionAttempt(false);
 
     try {
       await dispatch(listActions.newList(list));
@@ -66,10 +47,6 @@ export default function Lists() {
       if (data && data.errors) setErrors(data.errors);
     }
   };
-
-  const errorList = <ul className="errors">
-    {submissionAttempt && errors.map((error, idx) => <li key={idx}>{error}</li>)}
-    </ul>
 
   return (
     <>
@@ -87,8 +64,9 @@ export default function Lists() {
 
             {isFormVisible &&
               <form onSubmit={handleSubmit}>
-
-                {errorList}
+                <ul className="errors">
+                  {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
 
                 <div className="new-form">
                   <input className="new-form-input"
