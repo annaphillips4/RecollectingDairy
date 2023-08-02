@@ -1,0 +1,1587 @@
+[33mcommit 92453b64ec351acc45aae2a1af541e0a7481765e[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Merge: 0a349e9 f305404
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 16:34:39 2023 -0500
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 0a349e98618d87bd38d2d24cf1f0438d892ffbab[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 16:34:30 2023 -0500
+
+    css shit
+
+[33mcommit f30540498717b4d46a075f6341efddb76e47744b[m
+Merge: 59079ea 8cbced4
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 16:48:25 2023 -0400
+
+    Merge pull request #75 from annaphillips4/errorH
+    
+    error handling for add list
+
+[33mcommit 8cbced4305cc71c0f04956c9f4bd7dfb8e2d15ab[m[33m ([m[1;31morigin/errorH[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 16:47:52 2023 -0400
+
+    error handling for add list
+
+[33mcommit 59079ea085d874e4f856533081e4e49594858905[m
+Merge: 412d20d 8e5e2cd
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 16:23:17 2023 -0400
+
+    Merge pull request #74 from annaphillips4/new_summary
+    
+    update list button no longer appears next to All Tasks
+
+[33mcommit 8e5e2cd02e2559c00278ee119b56cfb62d4273b1[m[33m ([m[1;31morigin/new_summary[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 16:22:38 2023 -0400
+
+    update list button no longer appears next to All Tasks
+
+[33mcommit 412d20d3e7802c4187bb61cdc0a3894fd326dbd4[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 16:13:17 2023 -0400
+
+    minor code cleanup
+
+[33mcommit f17be708119cb5643aa905747999b39f45b58646[m
+Merge: 0365884 a8988fb
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 16:00:16 2023 -0400
+
+    Merge pull request #73 from annaphillips4/new_summary
+    
+    New summary
+
+[33mcommit a8988fbabeca9383b2cfcbc4a4ad2134fa17f87e[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 15:59:36 2023 -0400
+
+    conditional render working in summary component
+
+[33mcommit 0365884a23cb7af2a28db8393dbd6791fde9ceef[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 14:46:58 2023 -0500
+
+    search feature on main
+
+[33mcommit 2e26676f6e115c889bd2ad2ddf3e2064f4570672[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 15:28:55 2023 -0400
+
+    oldSummary file added
+
+[33mcommit 3a8a850f96b55948d5f8a62c0629fdbe11ff821f[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 15:27:32 2023 -0400
+
+    oldSummary file added
+
+[33mcommit 21d86a5a6fb1d5ab5169441aa0bbbf8feaa96815[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 14:10:03 2023 -0500
+
+    FINISHED SEARCH
+
+[33mcommit 19ebdb5a932d10348603356afe0c636ff497c73c[m
+Merge: 0b94736 40891c2
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 13:42:47 2023 -0500
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 0b9473624159df2f63b8810adef71b346174dcd5[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 13:42:45 2023 -0500
+
+    search shit
+
+[33mcommit 40891c20f1b0d9def0a242e680ff5fce53375267[m
+Merge: b9fd4ef 72bd84d
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 14:25:12 2023 -0400
+
+    Merge pull request #70 from annaphillips4/task_edit
+    
+    edit task bugfix
+
+[33mcommit 72bd84d19b2c7984d77e15f1aadd87524b0f0b34[m[33m ([m[1;31morigin/task_edit[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 14:24:28 2023 -0400
+
+    edit task bugfix
+
+[33mcommit b9fd4ef84bb67775e07aa433f5a83a50b5b0686d[m
+Merge: 263138c 02e45c9
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 14:09:13 2023 -0400
+
+    Merge pull request #69 from annaphillips4/task_edit
+    
+    task update more or less working
+
+[33mcommit 02e45c99ddebb57e889b735b54b005b82d96f955[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 14:08:37 2023 -0400
+
+    task update more or less working
+
+[33mcommit 263138ce4052a1593c9af0fe92f89cff11a93910[m
+Merge: c9fde83 5437a81
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 11:47:17 2023 -0400
+
+    Merge pull request #68 from annaphillips4/task_edit
+    
+    added initial estimate option to estimate dropdown
+
+[33mcommit 5437a81cc7e27fd8a30a60a446eada846b681618[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 11:46:39 2023 -0400
+
+    added initial estimate option to estimate dropdown
+
+[33mcommit c9fde83436de5ad994d9a8b2fdc1b6a6c85b8040[m
+Merge: 1bd2583 749f0d1
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 11:34:07 2023 -0400
+
+    Merge pull request #67 from annaphillips4/task_edit
+    
+    estimate dropdown working in task edit form
+
+[33mcommit 749f0d1e5e4c70a8ae31428cc2e56695962dd246[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 11:33:37 2023 -0400
+
+    estimate dropdown working in task edit form
+
+[33mcommit 1bd2583ed1a755260e1761c87f06cd6b6d345fc6[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 09:49:13 2023 -0500
+
+    bug fixes
+
+[33mcommit f812fcb0bff09d66fbacd831797e9250e98cdcc7[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 09:30:22 2023 -0500
+
+    logo fix
+
+[33mcommit 3f652bae6a6059ed4640e0862ba8cd855851936c[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 09:26:59 2023 -0500
+
+    task update
+
+[33mcommit 529697eb1ee717bc604c09f5d2a26b0f70cc803c[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 09:07:45 2023 -0500
+
+    task update
+
+[33mcommit 1cb19d8c296860226844048f58dce71bf28a0e56[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 08:32:16 2023 -0500
+
+    task info
+
+[33mcommit 40319b910b3159a7c471080be58abc465da44fb0[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 03:28:57 2023 -0500
+
+    finished summary
+
+[33mcommit f44ad964bf75c4fbf42989e53aa9b4c8599e7289[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 15 02:59:36 2023 -0500
+
+    fleshed out landing/demo button
+
+[33mcommit dc40027b0fbd8e60aa83772790ddaf63c37826d1[m
+Merge: 10e46d8 065b404
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 03:00:13 2023 -0400
+
+    Merge pull request #66 from annaphillips4/task_edit
+    
+    task edit form halfway? done
+
+[33mcommit 065b4048c54fe0143a4efeed0c2948d59057e6cc[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 02:59:07 2023 -0400
+
+    task edit form halfway? done
+
+[33mcommit 10e46d88f35cccbc73fab9c88c1b93576609731c[m
+Merge: 6cc836d ae49113
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Mon May 15 00:32:48 2023 -0400
+
+    Merge pull request #65 from annaphillips4/task_edit
+    
+    started task edit form
+
+[33mcommit ae4911372e380adf6074020d0993d8959c9e5319[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Mon May 15 00:32:12 2023 -0400
+
+    started task edit form
+
+[33mcommit 6cc836d2fb7c2856fb823d6d90d0c193b158b822[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 22:36:02 2023 -0500
+
+    list update done
+
+[33mcommit 9b020eba6dd49dabb7aa37b066437934c7e6229d[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 19:51:55 2023 -0500
+
+    delete broken
+
+[33mcommit 815216bef5bb456782f5e3c28baa567e4a61c374[m
+Merge: 0587981 1861baa
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sun May 14 19:42:50 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 1861baa2b70118700e0a78f8ae35fe27c5562edb[m
+Merge: 74d4665 b4c77e1
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 18:33:55 2023 -0500
+
+    summary css
+
+[33mcommit 74d46656b3754c4c3426982e7a7f95d9caa79435[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 18:29:56 2023 -0500
+
+    summary cs
+
+[33mcommit 05879811f5b1627a32283fd04d18c154a0648972[m
+Merge: b4c77e1 793225d
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sun May 14 19:13:30 2023 -0400
+
+    Merge branch 'lists' into dev
+
+[33mcommit 793225d0d7db36221bab56ce7edf91ce5ae675a2[m[33m ([m[1;31morigin/lists[m[33m)[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sun May 14 19:12:39 2023 -0400
+
+    list form toggles visibility after submit and fields clear
+
+[33mcommit b4c77e11343a3b6dca51c5425b425b0a295e95e6[m
+Merge: 28a6346 75f4ae0
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 17:29:10 2023 -0400
+
+    Merge pull request #64 from annaphillips4/summary
+    
+    summary component done (maybe)
+
+[33mcommit 75f4ae06327ee560491a08070b6be1183c75f80b[m[33m ([m[1;31morigin/summary[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sun May 14 17:28:29 2023 -0400
+
+    summary component done (maybe)
+
+[33mcommit 28a6346a09b485ded141f5efef6b25723a73abb5[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 16:20:18 2023 -0500
+
+    summary container
+
+[33mcommit cbfaca9937d4640620c66e82de23ad406f52b1ef[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 16:08:51 2023 -0500
+
+    tasks
+
+[33mcommit 9c95bd411cc316abf50a4dc70491769b61b43ca3[m
+Merge: 442cd86 ab9094d
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 14:58:07 2023 -0400
+
+    Merge pull request #63 from annaphillips4/summary
+    
+    time estimate in summary component
+
+[33mcommit ab9094de29a8666ceef54e2f101eec84eca3f43c[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sun May 14 14:57:31 2023 -0400
+
+    time estimate in summary component
+
+[33mcommit 442cd86db29e7412b5276e206639f35768980c07[m
+Merge: e222c0d 79acf3c
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 13:33:40 2023 -0400
+
+    Merge pull request #62 from annaphillips4/summary
+    
+    bugfix in get tasks route
+
+[33mcommit 79acf3c51b959d75f18c5bb67918e28556d825ea[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sun May 14 13:32:53 2023 -0400
+
+    bugfix in get tasks route
+
+[33mcommit e222c0d1ec9615cb10cfdede5ba9282a27f2c6fb[m
+Merge: 571e147 93e708d
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 11:51:04 2023 -0400
+
+    Merge pull request #61 from annaphillips4/summary
+    
+    Summary
+
+[33mcommit 93e708d138b6d29b468cc29aa2622356c0ef472e[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sun May 14 11:50:28 2023 -0400
+
+    minor bugfixes
+
+[33mcommit 1bd5b370320a47335aa86d9c57cbf4db5cce3124[m
+Merge: 4a32474 571e147
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 11:19:47 2023 -0400
+
+    Merge pull request #60 from annaphillips4/dev
+    
+    Dev
+
+[33mcommit 571e147686f50e6fbe64de79ad99549a4445cdf3[m
+Merge: 287eb3e 4a32474
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 11:17:58 2023 -0400
+
+    Merge pull request #59 from annaphillips4/master
+    
+    Merge pull request #58 from annaphillips4/dev
+
+[33mcommit 287eb3e18fb16b776e7d2a785fdcd98b10d5f335[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 04:33:39 2023 -0500
+
+    task css
+
+[33mcommit 7969e87d04b3b1a912a4794bb23a376f9cd56c44[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 04:25:17 2023 -0500
+
+    tasks css
+
+[33mcommit 0f9d5fbafc764d42b4ba8c08ba31af553b9bb1fb[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sun May 14 02:56:31 2023 -0500
+
+    sidebar
+
+[33mcommit 4a32474f921600d87f1f62a4ca1b1b307df122b6[m
+Merge: 9054ebc 2d210a1
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 00:20:00 2023 -0400
+
+    Merge pull request #58 from annaphillips4/dev
+    
+    Dev
+
+[33mcommit 2d210a12e1713d2a303d12411fa3622cf94db518[m
+Merge: 8529717 5874a5b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sun May 14 00:17:56 2023 -0400
+
+    Merge pull request #57 from annaphillips4/list_frontend
+    
+    number of tasks working in summary component
+
+[33mcommit 5874a5bc8162241d4ef499237cc7bd08aa9bf717[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sun May 14 00:16:46 2023 -0400
+
+    number of tasks working in summary component
+
+[33mcommit 85297173b55db67fc90ac72c81f4523d2cee5ed1[m
+Merge: 5ffcf8e 082bfe9
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 23:06:58 2023 -0400
+
+    Merge pull request #56 from annaphillips4/list_frontend
+    
+    added favicon
+
+[33mcommit 082bfe9fb46028de00139e5949e69433adf34f23[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 23:06:12 2023 -0400
+
+    added favicon
+
+[33mcommit 5ffcf8e42d6128037ef6a1b5e9837be4d64db7f0[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 21:53:21 2023 -0500
+
+    main page search bar
+
+[33mcommit 1b5b0c34cd7d2ea65142071be4c032ce8c5c9e74[m
+Merge: 9d7699e 728984f
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 22:50:05 2023 -0400
+
+    Merge pull request #55 from annaphillips4/node_install_fix
+    
+    react-router-dom downgrade to v5
+
+[33mcommit 728984f194c01ec2303c4ee6ecd3b2222c934027[m[33m ([m[1;31morigin/node_install_fix[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 22:49:18 2023 -0400
+
+    react-router-dom downgrade to v5
+
+[33mcommit 9d7699ee35a8adfb21d15184f164feff48a0c01f[m
+Merge: 9368ace a928e6c
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 22:36:13 2023 -0400
+
+    Merge pull request #54 from annaphillips4/node_install_fix
+    
+    node install fix
+
+[33mcommit a928e6cf02ce25444916b1c48f724ab51537075d[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 22:35:01 2023 -0400
+
+    node install fix
+
+[33mcommit 9368aced71d5b273cbcfa16e05bc7ee862bd771c[m
+Merge: 45a16f7 48c873d
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 22:08:39 2023 -0400
+
+    Merge pull request #53 from annaphillips4/node_install_fix
+    
+    Node install fix
+
+[33mcommit 48c873db381d68b66db667a0f6dd0cbed6738952[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 22:07:46 2023 -0400
+
+    node install fix
+
+[33mcommit bf1a034bd62087e202152a43b363ab5d8961812f[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 21:50:26 2023 -0400
+
+    restored root package-lock.json
+
+[33mcommit 45a16f7d71dc8c4b2839f0acdc687ed4e87961d3[m
+Merge: 9de7b71 71a96fd
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 21:42:26 2023 -0400
+
+    Merge pull request #52 from annaphillips4/node_install_fix
+    
+    removed node_modules from root directory
+
+[33mcommit 71a96fd3794927f6c707a6ff587082ed1325faef[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 21:41:36 2023 -0400
+
+    removed node_modules from root directory
+
+[33mcommit 9de7b71b71b3e63b5c3bda193cc360c9c727b257[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 19:35:28 2023 -0400
+
+    added link to all tasks
+
+[33mcommit a85bb0999ba84d2c1a1e56d49d64e959e84af0b8[m
+Merge: 67cb50e c585d85
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 19:33:07 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 67cb50ebe3a6452d5252bc2a6a77f7cda234a5d4[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 19:32:57 2023 -0400
+
+    list links work
+
+[33mcommit c585d85bdf0066240196f21008f9518f8edfbeed[m
+Merge: 512aee2 c23c883
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 17:25:40 2023 -0400
+
+    Merge pull request #51 from annaphillips4/list_frontend
+    
+    List frontend
+
+[33mcommit c23c88351954b9f6aaae4a5b55fd91fd959464f0[m[33m ([m[1;31morigin/list_frontend[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 17:23:45 2023 -0400
+
+    added .goodEnvDotPy file to root directory
+
+[33mcommit 9054ebc45ba8dbe1658a989009727d1928bf4121[m
+Merge: 414a9d9 512aee2
+Author: Dough <doughyetti@gmail.com>
+Date:   Sat May 13 16:03:13 2023 -0500
+
+    Merge pull request #49 from annaphillips4/dev
+    
+    env.py
+
+[33mcommit 512aee2c0b5748d0acd595c0e5c2a3bf566eb18f[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 16:01:38 2023 -0500
+
+    env.py
+
+[33mcommit 414a9d9add019c13d28cdb84326af8601c676a3d[m
+Merge: 2291ce5 e9354b3
+Author: Dough <doughyetti@gmail.com>
+Date:   Sat May 13 15:49:58 2023 -0500
+
+    Merge pull request #48 from annaphillips4/dev
+    
+    Dev
+
+[33mcommit e9354b3ba87d92b689accf0786c50a047fa49bee[m
+Merge: 1cb1189 29a1ac4
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 15:49:16 2023 -0500
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 1cb1189fdcfffb6ae265be8bf12f24c0f6ff25c7[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 15:49:07 2023 -0500
+
+    css
+
+[33mcommit 29a1ac43dcc4a305b0b4439e358d64a4b92f7200[m
+Merge: 22b14aa 3fb29e8
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 16:44:17 2023 -0400
+
+    fixed small seed error
+
+[33mcommit 22b14aa457c14a30bf58e7cbb478b32345aaabfe[m[33m ([m[1;31morigin/more_seeds[m[33m)[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 16:37:43 2023 -0400
+
+    seeds all
+
+[33mcommit 3fb29e8e7c01bf4354264a7fc6fe96a7c8a78ed7[m
+Merge: d782dcd 64c768b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 16:25:50 2023 -0400
+
+    Merge pull request #47 from annaphillips4/demo_login
+    
+    added demo user login button. needs styling.
+
+[33mcommit dcdbcf137662718326602190d0d8dfaa6b683bb9[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 16:25:30 2023 -0400
+
+    added more seeds
+
+[33mcommit 64c768b8229ca740c79626402b3962c1d99acfd1[m[33m ([m[1;31morigin/demo_login[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 16:25:00 2023 -0400
+
+    added demo user login button. needs styling.
+
+[33mcommit d782dcdc2637406ad5dda512556da5b9f918a05e[m
+Merge: 94a0058 3bba4b3
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 15:50:55 2023 -0400
+
+    Merge pull request #46 from annaphillips4/backend
+    
+    Backend
+
+[33mcommit 3bba4b35d1c4467c94f7dd6b2ce00dc42d30c72c[m[33m ([m[1;31morigin/backend[m[33m)[m
+Merge: f63a1cb 94a0058
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 15:49:20 2023 -0400
+
+    Merge branch 'dev' into backend
+
+[33mcommit f63a1cb248b989b854a1d3777dd14f2a58817464[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 15:48:36 2023 -0400
+
+    added numTasks and numCompleted to List model to_dict
+
+[33mcommit 6a9a6a1ea83ebb2871232f78677e5927847465f3[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 14:53:22 2023 -0400
+
+    Move changes to more_seeds branch
+
+[33mcommit 94a0058439fccda0d6bab44d09ba8fd604c2e240[m
+Merge: 81c6347 5a82166
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 14:50:36 2023 -0400
+
+    Merge pull request #45 from annaphillips4/backend
+    
+    Backend
+
+[33mcommit 5a821662140268a36a378d611975a45efb396d3a[m
+Merge: 0a4a8a3 81c6347
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 14:47:26 2023 -0400
+
+    Merge branch 'dev' into backend
+
+[33mcommit 81c6347b0a398460441b9431fd20f5b1fa1b2681[m
+Merge: 74da71e 995ed81
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 14:46:53 2023 -0400
+
+    Merge pull request #44 from annaphillips4/backend
+    
+    redirect to app page on login
+
+[33mcommit 0a4a8a322e825a414d8d82f3fdf7f67e6a9cae8c[m
+Merge: 995ed81 74da71e
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 14:45:20 2023 -0400
+
+    Merge branch 'dev' into backend
+
+[33mcommit 995ed8139de2e4692be0a8257043bbdaa43b531a[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 14:45:08 2023 -0400
+
+    redirect to app page on login
+
+[33mcommit 74da71e9c13711fdfb2cbbe714acc1a6d2e26655[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 14:34:51 2023 -0400
+
+    changed class to className
+
+[33mcommit 0645e5f070af6e0df33cca9bbc880fbbb609cb15[m
+Merge: 0295bc3 57da9aa
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 14:12:03 2023 -0400
+
+    Merge branch 'list_frontend' into dev
+
+[33mcommit 57da9aa1660e49af8f00594f44628887d2553eb1[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 14:11:16 2023 -0400
+
+    added delete icon to lists, delete icon only appears on hover
+
+[33mcommit 0295bc3096ccd3c55df8e41af34cab601564cc36[m
+Merge: 6231c25 d240c70
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 14:07:17 2023 -0400
+
+    Merge pull request #43 from annaphillips4/backend
+    
+    lists now include associated tasks. still need to implement state nor…
+
+[33mcommit d240c70a1921e037301b1ae90844abb31448762a[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 14:06:27 2023 -0400
+
+    lists now include associated tasks. still need to implement state normalization.
+
+[33mcommit 6231c255ea04a628b612f157742a21339cd6777f[m
+Merge: 11b0b91 bc22149
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 13:38:13 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 11b0b91206ac46ce7d88fb0167b207e46e69328e[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 13 13:38:05 2023 -0400
+
+    everything rendered on /app page
+
+[33mcommit bc221495ce911219597254ef13390d6d404ae0d0[m
+Merge: 7405caa dca1e96
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 13 13:16:41 2023 -0400
+
+    Merge pull request #42 from annaphillips4/backend
+    
+    get  all tasks backend route now returns only tasks owned by or assig…
+
+[33mcommit dca1e9628aa2df81fbf86b0797ab498168cdee11[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 13 13:15:43 2023 -0400
+
+    get  all tasks backend route now returns only tasks owned by or assigned to current user
+
+[33mcommit 7405caab778c1203d2bfd5fb3e36551009bc8b19[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 04:52:55 2023 -0500
+
+    landing finished
+
+[33mcommit 9d86ecfe05f127f0bd3a0da513025f8f755d72f7[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 04:12:55 2023 -0500
+
+    signup page
+
+[33mcommit 394093a491cf4b71809b2363811b437641ba2075[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Sat May 13 03:11:17 2023 -0500
+
+    login page
+
+[33mcommit 62296adde03ebd67a169a0fb46ff3de389a45632[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Fri May 12 19:05:54 2023 -0400
+
+    checkmarks fully work
+
+[33mcommit 50a94f8b1fb01a89d378b251ecda24d24e9a6240[m
+Merge: 39a012f 6e09335
+Author: Anna <annaphillips416@gmail.com>
+Date:   Fri May 12 18:39:36 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 39a012fd3a1cfde25ecf829c51cc79680bf81c09[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Fri May 12 18:39:20 2023 -0400
+
+    checks working on seeded tasks, troubleshoot new tasks throwing error on check
+
+[33mcommit 6e093355c165faeea3a60f028334b288c2b17e72[m
+Merge: 65cf4b1 1e33f45
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Fri May 12 17:56:02 2023 -0400
+
+    Merge pull request #41 from annaphillips4/user_stuff
+    
+    added first and last name fields to the user signup form
+
+[33mcommit 1e33f45b388e063fe330a3baf59abeb5b943e4a1[m[33m ([m[1;31morigin/user_stuff[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 17:55:15 2023 -0400
+
+    added first and last name fields to the user signup form
+
+[33mcommit 65cf4b127980a7f1f537f01ee3a0b19ca70aee08[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Fri May 12 17:27:09 2023 -0400
+
+    fixed bug: unauth user on get tasks route
+
+[33mcommit 8492dc0c95c44ffea6d6dc8c9b24d2e2aba9b7b3[m
+Merge: e43bd29 0720d72
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Fri May 12 17:10:23 2023 -0400
+
+    Merge pull request #40 from annaphillips4/list_frontend
+    
+    get all lists route now returns all lists of current user
+
+[33mcommit 0720d72400d7195d8eec303bf2968e441dc3b5a8[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 17:08:58 2023 -0400
+
+    get all lists route now returns all lists of current user
+
+[33mcommit e43bd2976aa6e92965c7df66152c6dda53d7933c[m
+Merge: 365cfac b6b36db
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Fri May 12 16:41:57 2023 -0400
+
+    Merge pull request #39 from annaphillips4/list_frontend
+    
+    bugfix in list and task store
+
+[33mcommit b6b36dbfb9e1449933dfcd45de84bcb950d2e94c[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 16:40:03 2023 -0400
+
+    bugfix in list and task store
+
+[33mcommit 365cfac47f4f98ff2e2e30228feb26af8fb721fe[m
+Merge: 4aa7597 efad9e9
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Fri May 12 15:09:42 2023 -0400
+
+    Merge pull request #38 from annaphillips4/list_frontend
+    
+    List frontend
+
+[33mcommit efad9e954df817d76c2bf63f5c76cc4b504a7599[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 15:08:23 2023 -0400
+
+    task and list put actions added to store
+
+[33mcommit 8105a9d614f4ccbc3edffa6ef565361ea150f4a6[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 14:45:50 2023 -0400
+
+    task PUT backend route
+
+[33mcommit a56c53f8e5f5ea589126144a37746296a800b411[m
+Merge: 2291ce5 4aa7597
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Fri May 12 13:48:16 2023 -0400
+
+    Merge branch 'dev' into list_frontend
+
+[33mcommit 4aa75972f7e250784de9bcc12a8fcfa8cf93dc10[m
+Merge: 3fcd6a7 3b671ce
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 21:15:18 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 3fcd6a7757c5a18379663706f68048773fa707eb[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 21:14:34 2023 -0400
+
+    icons are close to functioning
+
+[33mcommit 2291ce55fa9715a2ea79c358f597aa1beb87de85[m
+Merge: 987879e 3b671ce
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 11 19:38:37 2023 -0500
+
+    Merge pull request #37 from annaphillips4/dev
+    
+    forkey shit
+
+[33mcommit 3b671ce0264a22a05a92b5e50816cc3d44988191[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 19:37:58 2023 -0500
+
+    forkey shit
+
+[33mcommit 987879e5f55db186d3cf8e66fae713ac1cc32faa[m
+Merge: 11c690e 23c1e0e
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 11 19:34:49 2023 -0500
+
+    Merge pull request #36 from annaphillips4/dev
+    
+    Dev
+
+[33mcommit 23c1e0eeb1cea367708541eb5afd071fbee19767[m
+Merge: a33e67e 56d7fdf
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 19:34:12 2023 -0500
+
+    ForKey shit
+
+[33mcommit a33e67e1ea2a28c0ac43d0a485ad4e4d5fa6f23a[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 19:33:49 2023 -0500
+
+    foreign key shit
+
+[33mcommit 56d7fdf0e87beb0500f016079d2ed88615f22f6d[m[33m ([m[1;31morigin/list_backend[m[33m)[m
+Merge: 58dbec9 5f86099
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Thu May 11 20:25:07 2023 -0400
+
+    Merge pull request #35 from annaphillips4/collaboration
+    
+    task store bugfix
+
+[33mcommit 5f86099e739686044f6b3f9eb187895e7b7d6272[m[33m ([m[1;31morigin/collaboration[m[33m)[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Thu May 11 20:24:17 2023 -0400
+
+    task store bugfix
+
+[33mcommit 58dbec95b46efc72d56b1dec8f807217ce05ee66[m
+Merge: 9be9f51 91a6dc0
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Thu May 11 20:15:03 2023 -0400
+
+    Merge pull request #34 from annaphillips4/collaboration
+    
+    task delete bugfix
+
+[33mcommit 91a6dc05609ab5887cc3e8d84873aa65ad22370e[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Thu May 11 20:13:34 2023 -0400
+
+    task delete bugfix
+
+[33mcommit 9be9f51553b3fdfe064a545b0d46274483a7a055[m
+Merge: dc2b934 77360ec
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 20:07:10 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit dc2b9346e91507a403f9d75c14398cba01a8b264[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 20:06:53 2023 -0400
+
+    working on delete refreshing
+
+[33mcommit 77360ec2db8923fc0be0187d1ad84b1e199b566d[m
+Merge: 9f258b6 0f3dd9a
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Thu May 11 19:27:36 2023 -0400
+
+    Merge pull request #33 from annaphillips4/list_frontend
+    
+    List frontend
+
+[33mcommit 0f3dd9a9d92dbd73ab61b06abb7e5442bdac16e3[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Thu May 11 19:26:47 2023 -0400
+
+    delete case added to list store
+
+[33mcommit 11c690e42793ead779deb862171a17d23f27f708[m
+Merge: 5a949be 9f258b6
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 11 18:04:15 2023 -0500
+
+    Merge pull request #32 from annaphillips4/dev
+    
+    fixed env.py
+
+[33mcommit 9f258b6c962e47faabf6c0b8dfbb19393b3f6638[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 18:03:31 2023 -0500
+
+    fixed env.py
+
+[33mcommit 5a949be8a4f066d491edbcfd5ae38f67cf043ada[m
+Merge: 707dd07 d3e81f1
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Thu May 11 18:23:09 2023 -0400
+
+    Merge pull request #31 from annaphillips4/dev
+    
+    Dev
+
+[33mcommit d3e81f17f1bc07434f469c5b0c1d3db74ca4fb64[m
+Merge: 19e090f 531bfc2
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Thu May 11 18:20:59 2023 -0400
+
+    Merge pull request #30 from annaphillips4/tasks
+    
+    Tasks
+
+[33mcommit 531bfc2fdcb6ab0cdc3f3bcc941dd9bf865d8244[m[33m ([m[1;31morigin/tasks[m[33m)[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 18:17:49 2023 -0400
+
+    deleteTasks imported in Tasks.js
+
+[33mcommit 947fc925b8466c5a064cfee0a29291a73d92d0aa[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 18:09:44 2023 -0400
+
+    working on delete tasks
+
+[33mcommit 1e4bf5ad24ea075f0b056747709ca8f827891db3[m
+Merge: a071f28 19e090f
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 11 17:45:36 2023 -0400
+
+    Merge branch 'dev' into tasks
+
+[33mcommit 19e090f79c1139a6f2d3a76dab74213ee5d3d6dc[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: df9e0b2 4e877c4
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 16:41:56 2023 -0500
+
+    idk bro
+
+[33mcommit df9e0b2a4fd2767b928fedea6e2d66b6f1ea7cf9[m
+Merge: 5749795 9fe1d9a
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 16:41:09 2023 -0500
+
+    idk
+
+[33mcommit 4e877c45fabc67caf1f6a1f3e87fb7e2bcf748f3[m
+Merge: 5749795 d3e2b6b
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 11 16:35:59 2023 -0500
+
+    Merge pull request #29 from annaphillips4/landing
+    
+    Landing
+
+[33mcommit d3e2b6bf8dc0afe8c091304111d36dcea88a33b4[m
+Merge: 9fe1d9a 5749795
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 11 16:35:54 2023 -0500
+
+    Merge branch 'dev' into landing
+
+[33mcommit 9fe1d9a2172d7553f0e14c775aca389c802ac03f[m[33m ([m[1;31morigin/landing[m[33m, [m[1;32mlanding[m[33m)[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 16:34:07 2023 -0500
+
+    landing page done
+
+[33mcommit a1a8a660e6815c60682e5c224abbc5a0aee484eb[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Thu May 11 00:30:16 2023 -0500
+
+    more css
+
+[33mcommit 574979587cd8bd99f8708d8ce6ddf5a37a9d52df[m
+Merge: aa52563 974ace7
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 21:05:54 2023 -0400
+
+    Merge pull request #28 from annaphillips4/list_backend
+    
+    bugfix in list routes and store
+
+[33mcommit 974ace78d96adc97abe4e3e0a845eb0171a343b0[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Wed May 10 21:04:59 2023 -0400
+
+    bugfix in list routes and store
+
+[33mcommit a071f28a8195d1cd01209b0c74e00b4bdadfa63a[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Wed May 10 20:56:39 2023 -0400
+
+    need to trouble shoot post method not allowed
+
+[33mcommit aa525635b5b57d9f006ffc5076f775a6d27b719d[m
+Merge: fbc661f 8992e7b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 20:26:55 2023 -0400
+
+    Merge pull request #27 from annaphillips4/list_backend
+    
+    added list PUT route
+
+[33mcommit 8992e7b219bd9997ac73b7853c00d15738f414bb[m
+Merge: b9e6425 fbc661f
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 20:26:50 2023 -0400
+
+    Merge branch 'dev' into list_backend
+
+[33mcommit b9e64255d5662431072b992478d2bd9f427376e7[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Wed May 10 20:24:47 2023 -0400
+
+    added list PUT route
+
+[33mcommit ae71166805ad809977a5591033f5c69ba26881b0[m
+Merge: 06e5d3b 2d57dc5
+Author: Anna <annaphillips416@gmail.com>
+Date:   Wed May 10 20:00:20 2023 -0400
+
+    Merge branch 'tasks' of https://github.com/annaphillips4/RecollectingDairy into tasks
+
+[33mcommit 06e5d3bbc9f5a49c3cb2f23a577dd8b9cb6c4537[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Wed May 10 19:48:01 2023 -0400
+
+    fix errors in task_routes.py
+
+[33mcommit fbc661fb3d940f767d9906b74df9ab9ffddc55cb[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 18:44:16 2023 -0500
+
+    finished list POST
+
+[33mcommit a6ae8876c9b957eca16d5acf6d2591eef18412b9[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 18:33:08 2023 -0500
+
+    fixed reducer
+
+[33mcommit 476190e4bec90908b4d7fa0d0d1037b71c3a3421[m
+Merge: 4e70e66 2d57dc5
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 19:31:58 2023 -0400
+
+    Merge pull request #26 from annaphillips4/tasks
+    
+    Tasks
+
+[33mcommit 2d57dc582fc60d6fc3cb86fa21728789d4d60086[m
+Merge: ec7cd6c 4e70e66
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 19:31:51 2023 -0400
+
+    Merge branch 'dev' into tasks
+
+[33mcommit ec7cd6caf853ed4bcbafb5bab46204907fdb83f9[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Wed May 10 19:25:18 2023 -0400
+
+    fixed name not adding
+
+[33mcommit 4e70e66a77632c87945b7766c4e47852d6edea23[m
+Merge: 1879894 9690f70
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 19:12:27 2023 -0400
+
+    Merge pull request #25 from annaphillips4/list_backend
+    
+    added macStart script
+
+[33mcommit 9690f708c838aa86aed702770b01e71de719bf7e[m
+Merge: f703d5f 1879894
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 19:11:58 2023 -0400
+
+    Merge branch 'dev' into list_backend
+
+[33mcommit f703d5fcf81ed6726ecd3d88c68aeead9efcec35[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Wed May 10 19:09:27 2023 -0400
+
+    added macStart script
+
+[33mcommit 18798944f480e6840727c82e04238f53aa83fc37[m
+Merge: 6b8b61a 87a972a
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 17:54:39 2023 -0500
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into dev
+
+[33mcommit 6b8b61ade0645054c5544119972cc3bccf119df2[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 17:54:02 2023 -0500
+
+    bruh
+
+[33mcommit 675d307ea53906fca263f2f4e5fbc2e563b93542[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Wed May 10 18:21:17 2023 -0400
+
+    SmartAdd parsing string; need to submit to backend
+
+[33mcommit 87a972a89c707de776e288fb0a6873b0a2787326[m
+Merge: 61c45c9 b6da891
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Wed May 10 18:10:48 2023 -0400
+
+    Merge pull request #24 from annaphillips4/list_backend
+    
+    updates to list routes
+
+[33mcommit b6da891822352e087a170051a6139d808e4a7400[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Wed May 10 18:04:08 2023 -0400
+
+    updates to list routes
+
+[33mcommit 61c45c920e910ba31d75bd93add201a952329edd[m
+Merge: 8480162 b75977e
+Author: Dough <doughyetti@gmail.com>
+Date:   Wed May 10 16:57:13 2023 -0500
+
+    Merge pull request #23 from annaphillips4/list-frontend
+    
+    List frontend
+
+[33mcommit b75977e0b0981a859353a8e5707fe281aef86820[m
+Merge: bdeb893 8480162
+Author: Dough <doughyetti@gmail.com>
+Date:   Wed May 10 16:57:07 2023 -0500
+
+    Merge branch 'dev' into list-frontend
+
+[33mcommit bdeb8933ed973ae40a80b3a68e752f1b0e24fb13[m[33m ([m[1;31morigin/list-frontend[m[33m, [m[1;32mlist-frontend[m[33m)[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 16:49:50 2023 -0500
+
+    almost done
+
+[33mcommit 55e972f485ebb417eb2c5c21862d908913978c72[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Wed May 10 14:29:01 2023 -0500
+
+    1st
+
+[33mcommit 84801620a17353530a0b94cc81fecfa8dce5662a[m
+Merge: b9b0d16 40ff599
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 21:24:50 2023 -0400
+
+    Merge pull request #22 from annaphillips4/list_backend
+    
+    removed num_tasks and num_completed from List model
+
+[33mcommit 40ff59926b03d3aef620206cc53476aec8a319e7[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 21:08:52 2023 -0400
+
+    removed num_tasks and num_completed from List model
+
+[33mcommit b9b0d16af064bd0e4b3610f1f361f42edb5800c6[m
+Merge: 4b2a51c 2125858
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 20:33:30 2023 -0400
+
+    Merge pull request #21 from annaphillips4/list_backend
+    
+    added owner_id to list POST route
+
+[33mcommit 21258584d243583666d9a2ff741e5eb5c7104258[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 20:32:21 2023 -0400
+
+    added owner_id to list POST route
+
+[33mcommit 4b2a51cd09b032626a57d4f411410887c8078463[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Tue May 9 19:22:00 2023 -0500
+
+    list thunk
+
+[33mcommit 010b925cbdc0832c1f9825cbefbd03efea2bdea5[m
+Merge: 4f9d2cd 9bc91c7
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 19:55:04 2023 -0400
+
+    Merge pull request #20 from annaphillips4/list_backend
+    
+    List backend
+
+[33mcommit 9bc91c7bdccd7212e6111614310f4d5e99145207[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 19:54:15 2023 -0400
+
+    added list POST route
+
+[33mcommit 662ed894023de103532e1a5e82446ebf5227ca19[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 19:43:55 2023 -0400
+
+    added list POST route
+
+[33mcommit 98845dbd1b7cd1540d05b43b365a1e296a346dfe[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 19:42:56 2023 -0400
+
+    added list POST route
+
+[33mcommit 567214182f6d409c4f7b667eb03c02d6f02cfe64[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 19:41:31 2023 -0400
+
+    added list POST route
+
+[33mcommit 4f9d2cdfda1388b308a77f1d7154acc33a3588a0[m
+Merge: 2682755 4ea1235
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 19:20:08 2023 -0400
+
+    Merge pull request #19 from annaphillips4/list_backend
+    
+    first draft list_form file
+
+[33mcommit 4ea1235b0ff83d821180673a26b992bf571f6632[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 19:19:09 2023 -0400
+
+    first draft list_form file
+
+[33mcommit fb4a657d82c071e22aa011df3dff83769465411b[m
+Merge: 8f950fc 5142f42
+Author: Anna <annaphillips416@gmail.com>
+Date:   Tue May 9 18:49:20 2023 -0400
+
+    Merge branch 'dev' into tasks
+
+[33mcommit 8f950fca33df6233b8aea25cfd44ccfea932a89a[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Tue May 9 18:44:08 2023 -0400
+
+    frontend tasks
+
+[33mcommit 26827552316286410886f64c8b390aab71da17ac[m
+Merge: 5142f42 5dd4d6b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 18:43:49 2023 -0400
+
+    Merge pull request #18 from annaphillips4/list_backend
+    
+    changed npm start script
+
+[33mcommit 5dd4d6b48fa57668f2886f3b3d516c08ab6f0b48[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 18:42:57 2023 -0400
+
+    changed npm start script
+
+[33mcommit 5142f427d16e7215378baaf730726b999d5f8855[m
+Merge: be55a42 b750e99
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 18:12:57 2023 -0400
+
+    Merge pull request #17 from annaphillips4/list_backend
+    
+    added missing commas
+
+[33mcommit b750e99ca10d0a8e46df0cd60ca323d5e9368695[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 18:11:50 2023 -0400
+
+    added missing commas
+
+[33mcommit be55a423d20a88b5d50c5db9642e9f2f5d667633[m
+Merge: 2d877d5 5c6519c
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Tue May 9 18:03:45 2023 -0400
+
+    Merge pull request #16 from annaphillips4/list_backend
+    
+    added first and last name fields to the signup form and user signup r…
+
+[33mcommit 5c6519ca234adccf8b86a1f51a653fa7a72ee83b[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Tue May 9 18:02:14 2023 -0400
+
+    added first and last name fields to the signup form and user signup route
+
+[33mcommit 4395a894b7e1a10e57cf07fa40b5d8a088927b8a[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Tue May 9 17:20:23 2023 -0400
+
+    task routes, need to check if they work
+
+[33mcommit c58c13a6405052ba9793298a55dc71f4b21bfbf0[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Tue May 9 17:08:56 2023 -0400
+
+    task routes, need to check if they work
+
+[33mcommit 54f563832db4713ea6b9f022f89ef8ce66cf8677[m
+Author: dough <dough@Dough-PC.localdomain>
+Date:   Mon May 8 19:04:50 2023 -0500
+
+    navigation
+
+[33mcommit 2d877d511a661cc2d776dfb8828b10a3b57a4b00[m[33m ([m[1;31morigin/join_table[m[33m)[m
+Merge: 70cba70 beacc7b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 17:37:31 2023 -0400
+
+    Merge pull request #15 from annaphillips4/join_table
+    
+    redid migrations
+
+[33mcommit beacc7bac0bd4a284314b10ea4e0805d94794125[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 17:36:55 2023 -0400
+
+    redid migrations
+
+[33mcommit 70cba703c6fcac6e0f6edf204c11d6614f4a0517[m
+Merge: b427423 235b03f
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 17:05:01 2023 -0400
+
+    Merge pull request #14 from annaphillips4/join_table
+    
+    user-task relationship troubleshooting
+
+[33mcommit 235b03fa55a1e4327e096b91f40932938c7065c0[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 17:03:55 2023 -0400
+
+    user-task relationship troubleshooting
+
+[33mcommit b427423bf89b76f55b37b9661b8f09df173ea0da[m
+Merge: 9bc0f71 7bbb063
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 16:40:32 2023 -0400
+
+    Merge pull request #13 from annaphillips4/join_table
+    
+    user-task relationship troubleshooting
+
+[33mcommit 7bbb063b39cfd676fc1b25aeea52446a65eca1a2[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 16:39:56 2023 -0400
+
+    user-task relationship troubleshooting
+
+[33mcommit 9bc0f71bc352fe99f8110aa2531499e23eefd06c[m
+Merge: bbe544f 6c6f28b
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 16:29:57 2023 -0400
+
+    Merge pull request #12 from annaphillips4/join_table
+    
+    user-task relationship troubleshooting
+
+[33mcommit 6c6f28bfe09dfb09a107dad222232efadca68492[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 16:28:23 2023 -0400
+
+    user-task relationship troubleshooting
+
+[33mcommit bbe544f2da7f888c1c6624e62151b8de7a52a6a8[m
+Merge: 170b2bd 58a39a5
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 16:23:49 2023 -0400
+
+    Merge pull request #11 from annaphillips4/join_table
+    
+    user-task relationship troubleshooting
+
+[33mcommit 58a39a57ad34169b83381963d370f0b555b3e1ec[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 16:22:10 2023 -0400
+
+    user-task relationship troubleshooting
+
+[33mcommit 170b2bdcc3f5b6143bf150db9fd96580932a5a02[m
+Merge: 00ee144 c975a3d
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 16:05:24 2023 -0400
+
+    Merge pull request #10 from annaphillips4/join_table
+    
+    reworked model relationships
+
+[33mcommit c975a3d8225f3d63cfb936e7f9e12768b3502667[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 16:04:27 2023 -0400
+
+    reworked model relationships
+
+[33mcommit 00ee1443e279e02eec1653ff5a9c1bba9890228b[m
+Merge: 4415edf 4b75139
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 14:56:20 2023 -0400
+
+    Merge pull request #9 from annaphillips4/join_table
+    
+    added id to list_user to_dict
+
+[33mcommit 4b75139d0bfbecef77016fd7a70e6f4be44983e3[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 14:55:46 2023 -0400
+
+    added id to list_user to_dict
+
+[33mcommit 4415edff656109645889f36d74e2127cfed30cf5[m
+Merge: 0654348 f0b056c
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 14:26:29 2023 -0400
+
+    Merge pull request #8 from annaphillips4/join_table
+    
+    added primary key column to join table
+
+[33mcommit f0b056c00942147e3df9f871db715ae69cba09aa[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 14:24:39 2023 -0400
+
+    added primary key column to join table
+
+[33mcommit 0654348d7d80a7a90fc66a54c1f0a7bb9a9d5c80[m
+Merge: 321ad18 1363246
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 13:49:52 2023 -0400
+
+    Merge pull request #7 from annaphillips4/join_table
+    
+    fixed typo in list_users seeder
+
+[33mcommit 13632463db3e44934a658faa4ee3dd02383c78fe[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 13:48:53 2023 -0400
+
+    fixed typo in list_users seeder
+
+[33mcommit 321ad18b5665e04c009d8fcfa7fdb1b029fd40e5[m
+Merge: 3e6ea07 01f827f
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 13:43:17 2023 -0400
+
+    Merge pull request #6 from annaphillips4/join_table
+    
+    changed order of doing and undoing seeding
+
+[33mcommit 01f827f6d3292a5783b21bbba57ae9a98e7c55e8[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 13:42:03 2023 -0400
+
+    changed order of doing and undoing seeding
+
+[33mcommit 3e6ea078b4701120fba22488315ed2fb67f70bb2[m
+Merge: a03660f 0b335da
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 13:20:44 2023 -0400
+
+    Merge pull request #5 from annaphillips4/join_table
+    
+    Join table
+
+[33mcommit 0b335daaf814488784e35cfa2be5b6dc393aec3c[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 13:19:08 2023 -0400
+
+    seeder for list_users
+
+[33mcommit d8c5f621d855ffe589d83046bdbf88397f14115b[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 13:17:10 2023 -0400
+
+    seeder for list_users
+
+[33mcommit a03660fe316c63d93b4e75f6134f5df4610aba17[m
+Merge: 7e85d97 48abde7
+Author: RLW401 <81261443+RLW401@users.noreply.github.com>
+Date:   Sat May 6 12:16:15 2023 -0400
+
+    Merge pull request #4 from annaphillips4/join_table
+    
+    added dev.db to .gitignore
+
+[33mcommit b2baec48cf1402325e057d0ecc5543cdb763462f[m
+Merge: 74c0bd7 7e85d97
+Author: Anna <annaphillips416@gmail.com>
+Date:   Sat May 6 12:14:25 2023 -0400
+
+    Merge branch 'dev' of https://github.com/annaphillips4/RecollectingDairy into tasks
+
+[33mcommit 48abde771fe28471c78a030166a5e058a7d43b69[m
+Author: Robert L. Williams <robert.leslie.williams@protonmail.com>
+Date:   Sat May 6 12:14:12 2023 -0400
+
+    added dev.db to .gitignore
+
+[33mcommit 74c0bd7f615ae8fc34a1c4744518ac5992055cbc[m
+Author: Anna <annaphillips416@gmail.com>
+Date:   Thu May 4 21:04:27 2023 -0400
+
+    started task components and action/thunks
+
+[33mcommit 7e85d97ab70819e0fb2cfffda930236c47e963dd[m
+Merge: 3f9428d 3162cfe
+Author: Dough <doughyetti@gmail.com>
+Date:   Thu May 4 19:42:18 2023 -0500
+
+    Merge pull request #3 fr
