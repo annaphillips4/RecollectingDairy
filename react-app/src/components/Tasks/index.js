@@ -128,37 +128,37 @@ export default function Tasks() {
             <i
               className="fa-solid fa-calendar-check"
               onClick={() => handleSmartAdd('^')}
-              title="Due Date"
+              title="Add Due Date"
             ></i>
             <i
               className="fa-solid fa-calendar-day"
               onClick={() => handleSmartAdd('~')}
-              title="Start Date"
+              title="Add Start Date"
             ></i>
             <i
               className="fa-solid fa-exclamation"
               onClick={() => handleSmartAdd('!')}
-              title="Priority"
+              title="Add Priority"
             ></i>
             <i
               className="fa-solid fa-rectangle-list"
               onClick={() => handleSmartAdd('#')}
-              title="Repeat Period"
+              title="Add Repeat Period"
             ></i>
             <i
               className="fa-solid fa-clock-rotate-left"
               onClick={() => handleSmartAdd('*')}
-              title="Repeat Type"
+              title="Add Repeat Type"
             ></i>
             <i
               className="fa-solid fa-location-dot"
               onClick={() => handleSmartAdd('@')}
-              title="Location"
+              title="Add Location"
             ></i>
             <i
               className="fa-solid fa-stopwatch"
               onClick={() => handleSmartAdd('=')}
-              title="Estimate"
+              title="Add Estimate"
             ></i>
             {/* <i className="fa-solid fa-user"></i> */}
           </div>
@@ -177,20 +177,20 @@ export default function Tasks() {
                   onClick={() => handleEditTask(taskObj.id, false)}>
                 </i>
               )}
-              {!taskObj.completed && (
-                <i
-                  className="fa-regular fa-square"
-                  onClick={() => handleEditTask(taskObj.id, true)}>
-                </i>
-              )}
-              <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
-                {taskObj.name}
-              </a>
+                {!taskObj.completed && (
+                  <i
+                    className="fa-regular fa-square"
+                    onClick={() => handleEditTask(taskObj.id, true)}>
+                  </i>
+                )}
+                <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
+                  {taskObj.name}
+                </a>
               </span>
-                <i
-                  className="fa-solid fa-trash-can"
-                  onClick={() => handleDelete(taskObj.id)}>
-                </i>
+              <i
+                className="fa-solid fa-trash-can"
+                onClick={() => handleDelete(taskObj.id)}>
+              </i>
               {/* {taskObj.dueDate} */}
             </div>
           )
