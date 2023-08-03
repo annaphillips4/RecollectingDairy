@@ -68,9 +68,9 @@ function TaskInfo() {
 
       <div className="content-container">
         <div className="sidebar">
+            <Link to={"/app"}>
           <div className="sidebar-logo">
-            <Link to={"/app"}></Link>
-          </div>
+          </div></Link>
           <Lists />
         </div>
 
