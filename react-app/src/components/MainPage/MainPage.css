@@ -114,3 +114,19 @@
   top: 50px;
   background-color: #d7e7f5;
 }
+
+#menu-icon-github {
+  position: absolute;
+  font-size: 17px;
+  top: 9px;
+  left: 130px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu-icon-github i {
+  font-size: 20px;
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+}

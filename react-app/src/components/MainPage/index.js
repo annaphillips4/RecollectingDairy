@@ -33,12 +33,17 @@ function Main() {
     setQuery("");
   };
 
+  const visitGithub = () => {
+    window.location.href = 'https://github.com/annaphillips4/RecollectingDairy.git'
+  }
+
   return (
     <div className="app-container">
       <div className="top-nav-bar">
 
         <div className="search-container">
           <i id="menu-icon" className="fa-solid fa-bars"></i>
+          <div id="menu-icon-github" onClick={visitGithub}>github<i className="fa-brands fa-github"></i></div>
           <div className="search-bar" onBlur={(e) => hide(e)}>
             <input onChange={(e) => setQuery(e.target.value)} onFocus={() => show()} className="search-input" type="text" placeholder="Search..." ></input>
           </div>
