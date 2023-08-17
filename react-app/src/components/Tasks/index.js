@@ -19,17 +19,25 @@ export default function Tasks() {
     dispatch(loadTasks());
   }, [dispatch]);
 
+  const showTaskNameError = () => {
+    alert('New tasks must have a name. Any text before the first tag will be the name of your new task.');
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const payload = parseInputString(inputValue);
-    let newReview = await dispatch(postTask(payload))
+    if (!payload.name) {
+      showTaskNameError()
+    } else {
+      let newReview = await dispatch(postTask(payload))
 
-    if (newReview) {
-      await dispatch(loadTasks)
+      if (newReview) {
+        await dispatch(loadTasks)
+      }
+
+      setInputValue('')
     }
-
-    setInputValue('')
   }
 
   const handleEditTask = async (taskId, bool) => {
@@ -177,20 +185,20 @@ export default function Tasks() {
                   onClick={() => handleEditTask(taskObj.id, false)}>
                 </i>
               )}
-              {!taskObj.completed && (
-                <i
-                  className="fa-regular fa-square"
-                  onClick={() => handleEditTask(taskObj.id, true)}>
-                </i>
-              )}
-              <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
-                {taskObj.name}
-              </a>
+                {!taskObj.completed && (
+                  <i
+                    className="fa-regular fa-square"
+                    onClick={() => handleEditTask(taskObj.id, true)}>
+                  </i>
+                )}
+                <a className="task-name" href={`/app/list/${taskObj.listId}/${taskObj.id}`}>
+                  {taskObj.name}
+                </a>
               </span>
-                <i
-                  className="fa-solid fa-trash-can"
-                  onClick={() => handleDelete(taskObj.id)}>
-                </i>
+              <i
+                className="fa-solid fa-trash-can"
+                onClick={() => handleDelete(taskObj.id)}>
+              </i>
               {/* {taskObj.dueDate} */}
             </div>
           )
