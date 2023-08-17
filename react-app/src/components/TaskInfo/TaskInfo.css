@@ -122,3 +122,8 @@
   top: 50px;
   background-color: #d7e7f5;
 }
+
+.search-card:hover {
+  background-color: #009dff;
+  cursor: pointer;
+}
